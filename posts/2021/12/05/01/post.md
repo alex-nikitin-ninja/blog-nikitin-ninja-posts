@@ -4,16 +4,13 @@ Use `man grep` for full details about grep. In this short post i'm trying to
 paste very handy one liners for future reference.
 
 ```
-$ grep -l "PANEL2" *json | grep -cr 'whole foods'
+$ grep -l "PANEL2" ./*.json | grep -cr 'whole foods'
 ```
-`-l`
- `--files-with-matches`
+`-l` `--files-with-matches`
 
-`-c`
- `--count`
+`-c` `--count`
 
-`-r`
- `--recursive`
+`-r` `--recursive`
 
 -more-
 
@@ -28,5 +25,5 @@ $ grep --include=\*.json -rnP ./ -e "PANEL2"
 
 
 
-this is pretty much it.
+This is pretty much it.
 
