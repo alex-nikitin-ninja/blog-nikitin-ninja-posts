@@ -4,7 +4,7 @@ test text
 ![&nbsp;](images/IMG_0551.JPG "Title")
 test text
 
-![&nbsp;](images/IMG_0551.JPG "Title")
+![image caption](images/IMG_0551.JPG "Title")
 
 # heading {#custom-id-1}
 

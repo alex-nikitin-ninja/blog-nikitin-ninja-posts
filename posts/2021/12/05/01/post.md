@@ -1,41 +1,32 @@
-![Some night shots](images/IMG_0551.JPG "Title")
+# Linux `grep` command tips
 
-# heading {#custom-id-1}
+Use `man grep` for full details about grep. In this short post i'm trying to
+paste very handy one liners for future reference.
 
+```
+$ grep -l "PANEL2" *json | grep -cr 'whole foods'
+```
+`-l`
+ `--files-with-matches`
 
-some text example
-some text example
+`-c`
+ `--count`
 
-some text example
+`-r`
+ `--recursive`
 
 -more-
 
-asdf google [^1]
-
-[^1]: Google
-
-## heading {#custom-id-2}
-### heading [link](#custom-id-3) {#custom-id-3}
-
-`test`
+```
+$ grep --include=\*.json -rnP ./ -e '"track_num": "1."'
+```
 
 ```
-more code
-<a href="1234">test</a>
+$ grep --include=\*.json -rnP ./ -e "PANEL2"
 ```
 
 
 
-term
-: definition
 
-
-<http://google.com>
-<alex@google.com>
-
-[Google](http://google.com)
-
-> quote
-quote
-quote
+this is pretty much it.
 
