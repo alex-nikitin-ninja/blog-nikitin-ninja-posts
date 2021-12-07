@@ -8,11 +8,11 @@ paste very handy one liners for future reference.
 ```
 $ grep -l "PANEL2" ./*.json | grep -cr 'whole foods'
 ```
-`-l` `--files-with-matches`
+`-l` `--files-with-matches` - repost files names
 
-`-c` `--count`
+`-c` `--count` - show appearance count
 
-`-r` `--recursive`
+`-r` `--recursive` - recursively search through folders
 
 -more-
 

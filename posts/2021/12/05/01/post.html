@@ -2,9 +2,9 @@
 <p>[micropost]</p>
 <p>Use <code>man grep</code> for full details about grep. In this short post i’m trying to paste very handy one liners for future reference.</p>
 <pre><code>$ grep -l &quot;PANEL2&quot; ./*.json | grep -cr &#39;whole foods&#39;</code></pre>
-<p><code>-l</code> <code>--files-with-matches</code></p>
-<p><code>-c</code> <code>--count</code></p>
-<p><code>-r</code> <code>--recursive</code></p>
+<p><code>-l</code> <code>--files-with-matches</code> - repost files names</p>
+<p><code>-c</code> <code>--count</code> - show appearance count</p>
+<p><code>-r</code> <code>--recursive</code> - recursively search through folders</p>
 <p>-more-</p>
 <pre><code>$ grep --include=\*.json -rnP ./ -e &#39;&quot;track_num&quot;: &quot;1.&quot;&#39;</code></pre>
 <pre><code>$ grep --include=\*.json -rnP ./ -e &quot;PANEL2&quot;</code></pre>

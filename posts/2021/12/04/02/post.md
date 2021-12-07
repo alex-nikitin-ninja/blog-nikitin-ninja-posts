@@ -1,4 +1,10 @@
-![&nbsp;](images/IMG_0551.JPG "Title")
+![Some night photo shots](images/IMG_0551.JPG "Title")
+
+# heading 04/02 {#custom-id-1}
+
+this is test blogpost
+
+-more-
 
 test text
 ![&nbsp;](images/IMG_0551.JPG "Title")
@@ -6,7 +12,6 @@ test text
 
 ![image caption](images/IMG_0551.JPG "Title")
 
-# heading {#custom-id-1}
 
 ---
 
