@@ -1,5 +1,7 @@
 # Linux `grep` command tips
 
+[micropost]
+
 Use `man grep` for full details about grep. In this short post i'm trying to
 paste very handy one liners for future reference.
 
@@ -23,7 +25,6 @@ $ grep --include=\*.json -rnP ./ -e "PANEL2"
 ```
 
 
+This is pretty much it.
 
-
-> This is pretty much it.
 
