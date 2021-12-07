@@ -1,8 +1,10 @@
-![alt text](assets/isolated.png "Title")
+![&nbsp;](images/IMG_0551.JPG "Title")
 
-![wide image](assets/isolated.png "title")
+test text
+![&nbsp;](images/IMG_0551.JPG "Title")
+test text
 
-[![wide image](assets/isolated.png "title")](assets/isolated.png "title")
+# heading {#custom-id-1}
 
 ---
 
@@ -10,7 +12,6 @@ asdf google [^1]
 
 [^1]: Google
 
-# heading {#custom-id-1}
 ## heading {#custom-id-2}
 ### heading [link](#custom-id-3) {#custom-id-3}
 
