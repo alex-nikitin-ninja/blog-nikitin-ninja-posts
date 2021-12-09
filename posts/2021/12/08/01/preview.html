@@ -5,7 +5,9 @@
 <h3 id="publishing">Publishing</h3>
 <p>Then make a post</p>
 <pre><code>$ pandoc post.md &gt; post.html; \
-  cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39; &gt; hashtags.txt</code></pre>
+  cat post.md | \
+  grep -oP &#39; #[[:alnum:]]+&#39; | \
+  grep -oP &#39;#[[:alnum:]]+&#39; &gt; hashtags.txt</code></pre>
 <h3 id="remove-publishing">Remove publishing</h3>
 <p>Then make a post</p>
 <pre><code>$ rm post.html</code></pre>
