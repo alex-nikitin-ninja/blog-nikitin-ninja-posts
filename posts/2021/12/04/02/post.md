@@ -1,6 +1,6 @@
 ![Some night photo shots](images/IMG_0551.JPG "Title")
 
-# heading 04/02 {#custom-id-1}
+# Heading 04/02 {#custom-id-1}
 
 this is test blogpost
 
