@@ -24,6 +24,7 @@ $ grep --include=\*.json -rnP ./ -e '"track_num": "1."'
 $ grep --include=\*.json -rnP ./ -e "PANEL2"
 ```
 
+ #linux #grep #helper
 
 This is pretty much it.
 

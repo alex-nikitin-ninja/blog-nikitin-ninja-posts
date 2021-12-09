@@ -1,5 +1,0 @@
-helper
-tips
-grep
-linux
-shortcuts

@@ -1,15 +1,42 @@
-# test 1
+# Blog shortcuts
 
-this is post preview
+### Preview
+Make a preview
+
+```
+$ pandoc post.md > preview.html
+```
+
+### Publishing
+Then make a post
+```
+$ pandoc post.md > post.html; \
+  cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+' > hashtags.txt
+```
+
+### Remove publishing
+Then make a post
+```
+$ rm post.html
+```
 
 -more-
 
-## heading2 {#customid2}
+### Categories
 
+Categories are - one category per row in the file `categories.txt`
 
+### Hashtags
+Hashtags must start from space and follow with `#` sign
 
-test 1234 {#thisishashtag1}
+> article #thisishashtag1 and #thisishashtag2 text
 
-### asdf {#customid3}
+#### Testing hashtags
+```
+$ cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+'
+```
 
-#thisishashtag2
+#### Removing hashtags
+```
+$ rm hashtags.txt
+```
