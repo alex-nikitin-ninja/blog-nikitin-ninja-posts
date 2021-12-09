@@ -19,6 +19,7 @@ $ pandoc post.md > preview.html
 ### Publishing
 ```
 $ pandoc post.md > post.html
+$ cp preview.md post.html
 ```
 
 -more-
