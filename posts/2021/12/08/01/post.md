@@ -11,7 +11,9 @@ $ pandoc post.md > preview.html
 Then make a post
 ```
 $ pandoc post.md > post.html; \
-  cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+' > hashtags.txt
+  cat post.md | \
+  grep -oP ' #[[:alnum:]]+' | \
+  grep -oP '#[[:alnum:]]+' > hashtags.txt
 ```
 
 ### Remove publishing
