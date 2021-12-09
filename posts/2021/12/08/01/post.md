@@ -1,12 +1,5 @@
 # Blog shortcuts
 
-### Preview
-Make a preview
-
-```
-$ pandoc post.md > preview.html
-```
-
 ### Structure
 ```
 ./blog-nikitin-ninja-posts/posts/YYYY/MM/DD/NN/post.md
@@ -17,22 +10,24 @@ $ pandoc post.md > preview.html
 `DD` - day  
 `NN` - number of the post for the day  
 
-### Publishing
-Then make a post
+
+### Preview
 ```
-$ pandoc post.md > post.html; \
-  cat post.md | \
-  grep -oP ' #[[:alnum:]]+' | \
-  grep -oP '#[[:alnum:]]+' > hashtags.txt
+$ pandoc post.md > preview.html
 ```
 
-### Remove publishing
-Then make a post
+### Publishing
 ```
-$ rm post.html
+$ pandoc post.md > post.html
 ```
 
 -more-
+
+### Remove publishing
+```
+$ rm post.html
+$ mv post.html preview.html
+```
 
 ### Authors list
 
@@ -45,14 +40,26 @@ Categories are - one category per row in the file `categories.txt`
 ### Hashtags
 Hashtags must start from space ` ` and follow with `#` sign: ` #yourhashtag`
 
-> article #thisishashtag1 and #thisishashtag2 text
+> **Example:** article #thisishashtag1 and #thisishashtag2 text
 
 #### Testing/preview hashtags
 ```
 $ cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+'
 ```
 
+#### Publishing hashtags
+```
+$ cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+' > hashtags.txt
+```
+
 #### Removing hashtags from post
 ```
 $ rm hashtags.txt
 ```
+
+
+#### Table
+|Syntax   |Description|
+|-|-|
+|Header   |Title|
+|Paragraph|Text| 

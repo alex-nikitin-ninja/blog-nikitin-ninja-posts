@@ -1,7 +1,4 @@
 <h1 id="blog-shortcuts">Blog shortcuts</h1>
-<h3 id="preview">Preview</h3>
-<p>Make a preview</p>
-<pre><code>$ pandoc post.md &gt; preview.html</code></pre>
 <h3 id="structure">Structure</h3>
 <pre><code>./blog-nikitin-ninja-posts/posts/YYYY/MM/DD/NN/post.md
 ./blog-nikitin-ninja-posts/posts/2021/12/04/02/post.md</code></pre>
@@ -9,16 +6,14 @@
 <code>MM</code> - month<br />
 <code>DD</code> - day<br />
 <code>NN</code> - number of the post for the day</p>
+<h3 id="preview">Preview</h3>
+<pre><code>$ pandoc post.md &gt; preview.html</code></pre>
 <h3 id="publishing">Publishing</h3>
-<p>Then make a post</p>
-<pre><code>$ pandoc post.md &gt; post.html; \
-  cat post.md | \
-  grep -oP &#39; #[[:alnum:]]+&#39; | \
-  grep -oP &#39;#[[:alnum:]]+&#39; &gt; hashtags.txt</code></pre>
-<h3 id="remove-publishing">Remove publishing</h3>
-<p>Then make a post</p>
-<pre><code>$ rm post.html</code></pre>
+<pre><code>$ pandoc post.md &gt; post.html</code></pre>
 <p>-more-</p>
+<h3 id="remove-publishing">Remove publishing</h3>
+<pre><code>$ rm post.html
+$ mv post.html preview.html</code></pre>
 <h3 id="authors-list">Authors list</h3>
 <p>Authors are - one author per row in the file <code>authors.txt</code></p>
 <h3 id="categories">Categories</h3>
@@ -26,9 +21,30 @@
 <h3 id="hashtags">Hashtags</h3>
 <p>Hashtags must start from space <code></code> and follow with <code>#</code> sign: <code>#yourhashtag</code></p>
 <blockquote>
-<p>article #thisishashtag1 and #thisishashtag2 text</p>
+<p><strong>Example:</strong> article #thisishashtag1 and #thisishashtag2 text</p>
 </blockquote>
 <h4 id="testingpreview-hashtags">Testing/preview hashtags</h4>
 <pre><code>$ cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39;</code></pre>
+<h4 id="publishing-hashtags">Publishing hashtags</h4>
+<pre><code>$ cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39; &gt; hashtags.txt</code></pre>
 <h4 id="removing-hashtags-from-post">Removing hashtags from post</h4>
 <pre><code>$ rm hashtags.txt</code></pre>
+<h4 id="table">Table</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr class="even">
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
