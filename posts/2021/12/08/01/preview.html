@@ -10,14 +10,16 @@
 <p>Then make a post</p>
 <pre><code>$ rm post.html</code></pre>
 <p>-more-</p>
+<h3 id="authors-list">Authors list</h3>
+<p>Authors are - one author per row in the file <code>authors.txt</code></p>
 <h3 id="categories">Categories</h3>
 <p>Categories are - one category per row in the file <code>categories.txt</code></p>
 <h3 id="hashtags">Hashtags</h3>
-<p>Hashtags must start from space and follow with <code>#</code> sign</p>
+<p>Hashtags must start from space <code></code> and follow with <code>#</code> sign: <code>#yourhashtag</code></p>
 <blockquote>
 <p>article #thisishashtag1 and #thisishashtag2 text</p>
 </blockquote>
-<h4 id="testing-hashtags">Testing hashtags</h4>
+<h4 id="testingpreview-hashtags">Testing/preview hashtags</h4>
 <pre><code>$ cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39;</code></pre>
-<h4 id="removing-hashtags">Removing hashtags</h4>
+<h4 id="removing-hashtags-from-post">Removing hashtags from post</h4>
 <pre><code>$ rm hashtags.txt</code></pre>
