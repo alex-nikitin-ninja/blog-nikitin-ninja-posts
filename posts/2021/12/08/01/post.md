@@ -7,6 +7,16 @@ Make a preview
 $ pandoc post.md > preview.html
 ```
 
+### Structure
+```
+./blog-nikitin-ninja-posts/posts/YYYY/MM/DD/NN/post.md
+./blog-nikitin-ninja-posts/posts/2021/12/04/02/post.md
+```
+`YYYY` - year  
+`MM` - month  
+`DD` - day  
+`NN` - number of the post for the day  
+
 ### Publishing
 Then make a post
 ```
