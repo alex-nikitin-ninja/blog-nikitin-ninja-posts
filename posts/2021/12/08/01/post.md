@@ -31,16 +31,14 @@ $ mv post.html preview.html
 
 ### Authors list
 
-Authors are - one author per row in the file `authors.txt`
+`authors.txt` - authors - one author per row in the file 
 
 ### Categories
 
-Categories are - one category per row in the file `categories.txt`
+`categories.txt` - categories - one category per row in the file 
 
 ### Hashtags
-Hashtags must start from space ` ` and follow with `#` sign: ` #yourhashtag`
-
-> **Example:** article #thisishashtag1 and #thisishashtag2 text
+`hashtags.txt` - hashtags must start from space ` ` and follow with `#` sign: ` #yourhashtag`
 
 #### Testing/preview hashtags
 ```
@@ -57,8 +55,12 @@ $ cat post.md | grep -oP ' #[[:alnum:]]+' | grep -oP '#[[:alnum:]]+' > hashtags.
 $ rm hashtags.txt
 ```
 
+### Blockquotes
 
-#### Table
+> **Example:** article #thisishashtag1 and #thisishashtag2 text
+
+
+### Table
 |Syntax   |Description|
 |-|-|
 |Header   |Title|

@@ -15,21 +15,22 @@
 <pre><code>$ rm post.html
 $ mv post.html preview.html</code></pre>
 <h3 id="authors-list">Authors list</h3>
-<p>Authors are - one author per row in the file <code>authors.txt</code></p>
+<p><code>authors.txt</code> - authors - one author per row in the file</p>
 <h3 id="categories">Categories</h3>
-<p>Categories are - one category per row in the file <code>categories.txt</code></p>
+<p><code>categories.txt</code> - categories - one category per row in the file</p>
 <h3 id="hashtags">Hashtags</h3>
-<p>Hashtags must start from space <code></code> and follow with <code>#</code> sign: <code>#yourhashtag</code></p>
-<blockquote>
-<p><strong>Example:</strong> article #thisishashtag1 and #thisishashtag2 text</p>
-</blockquote>
+<p><code>hashtags.txt</code> - hashtags must start from space <code></code> and follow with <code>#</code> sign: <code>#yourhashtag</code></p>
 <h4 id="testingpreview-hashtags">Testing/preview hashtags</h4>
 <pre><code>$ cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39;</code></pre>
 <h4 id="publishing-hashtags">Publishing hashtags</h4>
 <pre><code>$ cat post.md | grep -oP &#39; #[[:alnum:]]+&#39; | grep -oP &#39;#[[:alnum:]]+&#39; &gt; hashtags.txt</code></pre>
 <h4 id="removing-hashtags-from-post">Removing hashtags from post</h4>
 <pre><code>$ rm hashtags.txt</code></pre>
-<h4 id="table">Table</h4>
+<h3 id="blockquotes">Blockquotes</h3>
+<blockquote>
+<p><strong>Example:</strong> article #thisishashtag1 and #thisishashtag2 text</p>
+</blockquote>
+<h3 id="table">Table</h3>
 <table>
 <thead>
 <tr class="header">
