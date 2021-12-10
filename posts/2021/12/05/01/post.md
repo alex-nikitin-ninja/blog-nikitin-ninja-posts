@@ -27,16 +27,17 @@ $ grep --include=\*.* --exclude=\*.json -rnP ./ -e "PANEL2"
 
 `--exclude` - remove files indicated here from search (syntax similar to above)
 
-### grep vs. egrep
+## grep vs. egrep
 
 There's another command called `egrep`, which has similar syntax, but uses
 extended regular expressions. `egrep` is an equivalent of `grep -E` , sometimes
 just use `egrep` as a shortcut.
 
-The difference is extended vs "basic" regexp is interpreting characters
-`+`, `?`, `|`, `(`, `)` as meta characters in `egrep` and as pattern in `grep`
+The difference is extended vs "basic" expressions. The "basic" interprets
+characters `+`, `?`, `|`, `(`, `)` as meta characters in `egrep` and as pattern
+in `grep`.
 
-### Common syntax and handy flags
+## Common syntax and handy flags
 
 ```
 $ grep [OPTION...] PATTERNS [FILE...]
@@ -52,10 +53,9 @@ some other helpful flags to use:
 `-L` `--files-without-match` - helpful to show files which don't met search
      expression criteria
 
-
  #linux #grep #helper
 
-### Conclusion
+## Conclusion
 
 This is pretty much it.
 

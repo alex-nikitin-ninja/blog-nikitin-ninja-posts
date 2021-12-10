@@ -10,10 +10,10 @@
 <p>-more-</p>
 <pre><code>$ grep --include=\*.* --exclude=\*.json -rnP ./ -e &quot;PANEL2&quot;</code></pre>
 <p><code>--exclude</code> - remove files indicated here from search (syntax similar to above)</p>
-<h3 id="grep-vs.-egrep">grep vs. egrep</h3>
+<h2 id="grep-vs.-egrep">grep vs. egrep</h2>
 <p>There’s another command called <code>egrep</code>, which has similar syntax, but uses extended regular expressions. <code>egrep</code> is an equivalent of <code>grep -E</code> , sometimes just use <code>egrep</code> as a shortcut.</p>
-<p>The difference is extended vs “basic” regexp is interpreting characters <code>+</code>, <code>?</code>, <code>|</code>, <code>(</code>, <code>)</code> as meta characters in <code>egrep</code> and as pattern in <code>grep</code></p>
-<h3 id="common-syntax-and-handy-flags">Common syntax and handy flags</h3>
+<p>The difference is extended vs “basic” expressions. The “basic” interprets characters <code>+</code>, <code>?</code>, <code>|</code>, <code>(</code>, <code>)</code> as meta characters in <code>egrep</code> and as pattern in <code>grep</code>.</p>
+<h2 id="common-syntax-and-handy-flags">Common syntax and handy flags</h2>
 <pre><code>$ grep [OPTION...] PATTERNS [FILE...]</code></pre>
 <p>some other helpful flags to use:</p>
 <p><code>-i</code> <code>--ignore-case</code> - case insensitive search</p>
@@ -21,5 +21,5 @@
 <p><code>-l</code> <code>--files-with-matches</code> - show files names for later usage</p>
 <p><code>-L</code> <code>--files-without-match</code> - helpful to show files which don’t met search expression criteria</p>
 <p>#linux #grep #helper</p>
-<h3 id="conclusion">Conclusion</h3>
+<h2 id="conclusion">Conclusion</h2>
 <p>This is pretty much it.</p>
