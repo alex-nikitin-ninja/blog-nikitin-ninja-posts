@@ -1,12 +1,25 @@
 <h1 id="linux-grep-command-tips">Linux <code>grep</code> command tips</h1>
-<p>[micropost]</p>
 <p>Use <code>man grep</code> for full details about grep. In this short post i’m trying to paste very handy one liners for future reference.</p>
-<pre><code>$ grep -l &quot;PANEL2&quot; ./*.json | grep -cr &#39;whole foods&#39;</code></pre>
-<p><code>-l</code> <code>--files-with-matches</code> - repost files names</p>
-<p><code>-c</code> <code>--count</code> - show appearance count</p>
-<p><code>-r</code> <code>--recursive</code> - recursively search through folders</p>
-<p>-more-</p>
-<pre><code>$ grep --include=\*.json -rnP ./ -e &#39;&quot;track_num&quot;: &quot;1.&quot;&#39;</code></pre>
 <pre><code>$ grep --include=\*.json -rnP ./ -e &quot;PANEL2&quot;</code></pre>
+<p><code>-r</code> <code>--recursive</code> - recursively search through folders</p>
+<p><code>-n</code> <code>--line-number</code> - show lines numbers</p>
+<p><code>-P</code> <code>--perl-regexp</code> - perl-compatible regular expressions</p>
+<p><code>./</code> - current directory for search</p>
+<p><code>-e</code> <code>--regexp</code> - search expression</p>
+<p><code>--include</code> - only filter the files according to template</p>
+<p>-more-</p>
+<pre><code>$ grep --include=\*.* --exclude=\*.json -rnP ./ -e &quot;PANEL2&quot;</code></pre>
+<p><code>--exclude</code> - remove files indicated here from search (syntax similar to above)</p>
+<h3 id="grep-vs.-egrep">grep vs. egrep</h3>
+<p>There’s another command called <code>egrep</code>, which has similar syntax, but uses extended regular expressions. <code>egrep</code> is an equivalent of <code>grep -E</code> , sometimes just use <code>egrep</code> as a shortcut.</p>
+<p>The difference is extended vs “basic” regexp is interpreting characters <code>+</code>, <code>?</code>, <code>|</code>, <code>(</code>, <code>)</code> as meta characters in <code>egrep</code> and as pattern in <code>grep</code></p>
+<h3 id="common-syntax-and-handy-flags">Common syntax and handy flags</h3>
+<pre><code>$ grep [OPTION...] PATTERNS [FILE...]</code></pre>
+<p>some other helpful flags to use:</p>
+<p><code>-i</code> <code>--ignore-case</code> - case insensitive search</p>
+<p><code>-o</code> <code>--only-matching</code> - print only what matches search criteria</p>
+<p><code>-l</code> <code>--files-with-matches</code> - show files names for later usage</p>
+<p><code>-L</code> <code>--files-without-match</code> - helpful to show files which don’t met search expression criteria</p>
 <p>#linux #grep #helper</p>
+<h3 id="conclusion">Conclusion</h3>
 <p>This is pretty much it.</p>
