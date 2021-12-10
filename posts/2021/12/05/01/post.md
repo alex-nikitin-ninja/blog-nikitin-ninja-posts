@@ -53,10 +53,10 @@ Some other helpful options to use:
 `-L` `--files-without-match` - helpful to show files which don't met search
      expression criteria
 
- #linux #grep #helper
-
 ## Conclusion
 
 This is pretty much it.
 
+
+ #linux #grep #helper
 
