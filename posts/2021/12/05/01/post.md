@@ -42,7 +42,7 @@ in `grep`.
 ```
 $ grep [OPTION...] PATTERNS [FILE...]
 ```
-some other helpful flags to use:
+Some other helpful options to use:
 
 `-i` `--ignore-case` - case insensitive search
 
