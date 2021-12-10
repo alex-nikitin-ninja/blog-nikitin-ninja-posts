@@ -31,7 +31,7 @@ $ grep --include=\*.* --exclude=\*.json -rnP ./ -e "PANEL2"
 
 There's another command called `egrep`, which has similar syntax, but uses
 extended regular expressions. `egrep` is an equivalent of `grep -E` , sometimes
-just use `egrep` as a shortcut.
+i just use `egrep` as a shortcut.
 
 The difference is extended vs "basic" expressions. The "basic" interprets
 characters `+`, `?`, `|`, `(`, `)` as meta characters in `egrep` and as pattern
