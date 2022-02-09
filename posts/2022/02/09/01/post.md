@@ -1,4 +1,4 @@
-# Linux `tar` command tips
+# Linux `tar` command  quick tips
 
 ## Create archive
 
