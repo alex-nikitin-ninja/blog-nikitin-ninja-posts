@@ -28,8 +28,12 @@ tar -xzvf <name>.tar.gz -C <destination path>
 ## Parameters description
 
 `-c` - create archive
+
 `-x` - extract archive
+
 `-z` - compress with gzip
+
 `-v` - verbose or show progress
+
 `-f` - spcify destination archive file name
 
