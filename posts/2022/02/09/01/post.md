@@ -3,6 +3,10 @@
 ## Create archive
 ```
 tar -czvf <dst-name>.tar.gz <src-folder-or-file>
+```
+
+Example:
+```
 tar -czvf armbian-configured.img.tar.gz armbian-configured.img
 ```
 
