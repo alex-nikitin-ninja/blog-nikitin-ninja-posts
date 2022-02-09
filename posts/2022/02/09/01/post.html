@@ -1,0 +1,22 @@
+<h1 id="linux-tar-command-quick-tips">Linux <code>tar</code> command quick tips</h1>
+<p>Command <code>tar</code> stands for tape archive, is used to create archive and extract the archive files.</p>
+<h2 id="create-archive">Create archive</h2>
+<p>Common syntax:</p>
+<pre><code>tar -czvf &lt;dst-name&gt;.tar.gz &lt;src-folder-or-file&gt;</code></pre>
+<p>Example:</p>
+<pre><code>tar -czvf armbian-configured.img.tar.gz armbian-configured.img</code></pre>
+<p>-more-</p>
+<h2 id="with-custom-gzip-compression-level">With custom <code>gzip</code> compression level</h2>
+<pre><code>GZIP=-9 tar cvzf file.tar.gz &lt;dst-name&gt;.tar.gz &lt;src-folder-or-file&gt;</code></pre>
+<h2 id="extract-archive">Extract archive</h2>
+<h3 id="in-the-same-folder">In the same folder</h3>
+<pre><code>tar -xzvf armbian-configured.img.tar.gz</code></pre>
+<h3 id="different-folder">Different folder</h3>
+<pre><code>tar -xzvf &lt;name&gt;.tar.gz -C &lt;destination path&gt;</code></pre>
+<h2 id="parameters-description">Parameters description</h2>
+<p><code>-c</code> - create archive</p>
+<p><code>-x</code> - extract archive</p>
+<p><code>-z</code> - compress with gzip (make sure to add <code>.gz</code> extension)</p>
+<p><code>-v</code> - verbose or show progress</p>
+<p><code>-f</code> - spcify destination archive file name</p>
+<p>#linux, #tar, #helper</p>
