@@ -1,6 +1,8 @@
 # Linux `tar` command tips
 
 ## Create archive
+
+Common syntax:
 ```
 tar -czvf <dst-name>.tar.gz <src-folder-or-file>
 ```
