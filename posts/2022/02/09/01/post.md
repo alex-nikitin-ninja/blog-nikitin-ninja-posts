@@ -16,7 +16,7 @@ tar -czvf armbian-configured.img.tar.gz armbian-configured.img
 
 -more-
 
-## With custom `GZIP` compression level
+## With custom `gzip` compression level
 ```
 GZIP=-9 tar cvzf file.tar.gz <dst-name>.tar.gz <src-folder-or-file>
 ```
