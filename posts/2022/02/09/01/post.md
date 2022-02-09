@@ -21,7 +21,7 @@ tar -czvf armbian-configured.img.tar.gz armbian-configured.img
 GZIP=-9 tar cvzf file.tar.gz <dst-name>.tar.gz <src-folder-or-file>
 ```
 
-## Extract archive 1
+## Extract archive
 
 ### In the same folder
 ```
