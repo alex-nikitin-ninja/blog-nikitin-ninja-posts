@@ -45,3 +45,5 @@ tar -xzvf <name>.tar.gz -C <destination path>
 
 `-f` - spcify destination archive file name
 
+
+ #linux, #tar, #helper 
