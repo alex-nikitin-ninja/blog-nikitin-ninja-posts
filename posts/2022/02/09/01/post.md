@@ -1,9 +1,8 @@
 # Linux `tar` command  quick tips
 
-## Create archive
-
 Command `tar` stands for tape archive, is used to create archive and extract the archive files.
 
+## Create archive
 
 Common syntax:
 ```
