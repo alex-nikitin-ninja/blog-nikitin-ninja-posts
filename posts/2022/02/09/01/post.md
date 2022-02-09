@@ -39,7 +39,7 @@ tar -xzvf <name>.tar.gz -C <destination path>
 
 `-x` - extract archive
 
-`-z` - compress with gzip (make sure to add .gz extension)
+`-z` - compress with gzip (make sure to add `.gz` extension)
 
 `-v` - verbose or show progress
 
