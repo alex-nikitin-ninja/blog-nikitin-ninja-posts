@@ -1,10 +1,12 @@
-# linux `tar` command tips
+# Linux `tar` command tips
 
 ## Create archive
 ```
 tar -czvf <dst-name>.tar.gz <folder_or_file>
 tar -czvf armbian-configured.img.tar.gz armbian-configured.img
 ```
+
+-more-
 
 ## With custom compression level
 ```
