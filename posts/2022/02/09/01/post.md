@@ -30,7 +30,7 @@ tar -xzvf armbian-configured.img.tar.gz
 
 ### Different folder
 ```
-tar -xzvf <name>.tar.gz -C <destination path>
+tar -xzvf <name>.tar.gz -C <destination-path>
 ```
 
 ## Parameters description
@@ -46,4 +46,4 @@ tar -xzvf <name>.tar.gz -C <destination path>
 `-f` - spcify destination archive file name
 
 
- #linux, #tar, #helper 
+ #linux #tar #helper 
