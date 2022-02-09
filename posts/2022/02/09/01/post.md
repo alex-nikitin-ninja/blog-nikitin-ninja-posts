@@ -2,6 +2,9 @@
 
 ## Create archive
 
+Command `tar` stands for tape archive, is used to create archive and extract the archive files.
+
+
 Common syntax:
 ```
 tar -czvf <dst-name>.tar.gz <src-folder-or-file>
