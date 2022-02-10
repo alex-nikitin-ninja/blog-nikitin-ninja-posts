@@ -26,9 +26,9 @@ certificates and configuration up-to-date automatically.
 
 ## Input data
 
-We have a FQDN: chiken.com
-
-We have a VPS or bare metal server
+We have:
+- a FQDN: example.com
+- a VPS or bare metal server
 
 
 
