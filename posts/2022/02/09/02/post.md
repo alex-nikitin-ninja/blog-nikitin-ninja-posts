@@ -17,7 +17,7 @@ The answer is to use `nginx` as a reverse proxy and route traffic based on domai
 name or path name.
 
 And for taste of being encrypted and have all those services and microservices
-behind https we use free let's encrypt certificates and their bot to keep
+behind https we use free `Let's encrypt` certificates and their bot to keep
 everything up-to-date automatically.
 
 -more-
