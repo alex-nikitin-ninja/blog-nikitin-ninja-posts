@@ -78,7 +78,7 @@ server {
     listen 80;
     server_name example.com;
     location / {
-        proxy_pass  http://127.0.0.1:8002/;
+        proxy_pass  http://127.0.0.1:8001/;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_pass_request_headers on;
@@ -116,3 +116,15 @@ server {
 <a href="http://api.example.com">http://api.example.com</a><br />
 <a href="https://api.example.com">https://api.example.com</a></p>
 <p>As of now nginx should respond with <code>502 Bad Gateway</code> error code, because we did not start our docker application instances</p>
+<ol start="5" type="1">
+<li>Start both applications containers with external port mapping as below: (assuming application is listening port 80 inside of container)</li>
+</ol>
+<pre><code>docker run --rm \
+    -p 8001:80 \
+    --name spa-container \
+    -d spa-container:latest
+
+docker run --rm \
+    -p 8002:80 \
+    --name spa-container \
+    -d spa-container:latest</code></pre>
