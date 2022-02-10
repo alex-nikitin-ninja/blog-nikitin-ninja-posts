@@ -152,7 +152,8 @@ As of now nginx should respond with `502 Bad Gateway` error code, because we did
 not start our docker application instances
 
 5. Start both applications containers with external port mapping as below:  
-(assuming application is listening port 80 inside of container)
+(assuming application is listening port 80, change to your own, depending on
+configuration inside of container)
 ```
 docker run --rm \
     -p 8001:80 \
