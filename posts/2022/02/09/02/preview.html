@@ -34,8 +34,7 @@
 <pre><code>$ apt-get install python3-certbot-nginx</code></pre>
 <h3 id="configuration-steps">Configuration steps</h3>
 <ol type="1">
-<li>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>:</li>
-</ol>
+<li><p>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>:</p>
 <pre><code>$ nano /etc/nginx/conf.d/default.conf</code></pre>
 <p>Add entries for two new server sections:</p>
 <pre><code>...
@@ -54,4 +53,5 @@ server {
         proxy_pass  http://127.0.0.1:8002/;
     }
 }
-...</code></pre>
+...</code></pre></li>
+</ol>
