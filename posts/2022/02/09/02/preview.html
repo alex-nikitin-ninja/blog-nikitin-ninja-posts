@@ -108,3 +108,8 @@ server {
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 ...</code></pre>
+<ol start="4" type="1">
+<li>Verify that both url can be opened in browser via http and https protocols by: <a href="http://example.com">http://example.com</a><br />
+<a href="http://api.example.com">http://api.example.com</a><br />
+As of now nginx should respond with 502 error code, because we did not start our docker application instances</li>
+</ol>
