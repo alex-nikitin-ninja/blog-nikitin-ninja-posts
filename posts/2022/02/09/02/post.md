@@ -161,6 +161,6 @@ docker run --rm \
 
 docker run --rm \
     -p 8002:80 \
-    --name spa-container \
-    -d spa-container:latest
+    --name api-container \
+    -d api-container:latest
 ```
