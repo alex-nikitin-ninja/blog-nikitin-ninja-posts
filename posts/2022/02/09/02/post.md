@@ -66,19 +66,25 @@ Add entries for two new server sections:
 ```
 ...
 server {
-   listen 80;
-   server_name example.com;
-   location / {
-       proxy_pass  http://127.0.0.1:8001/;
-   }
+    listen 80;
+    server_name example.com;
+    location / {
+         proxy_pass  http://127.0.0.1:8001/;
+         proxy_set_header Host $host;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_pass_request_headers on;
+    }
 }
 
 server {
-   listen 80;
-   server_name api.example.com;
-   location / {
-       proxy_pass  http://127.0.0.1:8002/;
-   }
+    listen 80;
+    server_name api.example.com;
+    location / {
+        proxy_pass  http://127.0.0.1:8002/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass_request_headers on;
+    }
 }
 ...
 ```
@@ -91,6 +97,45 @@ $ certbot --nginx -d api.example.com
 or a single certificate covering two domains:
 ```
 $ certbot --nginx -d example.com -d api.example.com
+```
+Follow instructions from console and follow to the next step
+3. Verify certificates being added to nginx configuration:
+```
+...
+server {
+    listen 80;
+    server_name example.com;
+    location / {
+        proxy_pass  http://127.0.0.1:8002/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass_request_headers on;
+    }
+
+    listen 443 ssl http2; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    listen 80;
+    server_name api.example.com;
+    location / {
+        proxy_pass  http://127.0.0.1:8002/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass_request_headers on;
+    }
+
+    listen 443 ssl http2; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/api.example.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/api.example.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+...
 ```
 
 
