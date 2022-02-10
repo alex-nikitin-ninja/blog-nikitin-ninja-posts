@@ -9,17 +9,17 @@ What would be the approach of running applications on staging or live
 environment easily without overengineering and easy deployment process with CI
 pipelines.
 
-Obvious first response is to use `docker` for wrapping our applications into
+Obvious first response is to use **docker** for wrapping our applications into
 different environmemts.
 
 But how would we route traffic from incoming requests into various docker
 containers?
 
-The answer is to use `nginx` as a reverse proxy and route traffic based on domain
+The answer is to use **nginx** as a reverse proxy and route traffic based on domain
 name or path name.
 
 And for taste of being encrypted and have all those services and microservices
-behind https we use free `Let's encrypt` certificates and their bot to keep
+behind https we use free **Let's encrypt** certificates and their bot to keep
 certificates and configuration up-to-date automatically.
 
 -more-
