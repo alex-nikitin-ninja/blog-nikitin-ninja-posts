@@ -18,36 +18,40 @@
 <h2 id="action">Action</h2>
 <h3 id="installation-steps">Installation steps</h3>
 <ol type="1">
-<li><p><strong>ssh</strong> into our server</p></li>
-<li><p>Install <strong>nginx</strong>:</p>
-<pre><code>$ apt-get install nginx</code></pre></li>
-<li><p>Install <strong>docker</strong>:<br />
-(<a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a>)</p></li>
-<li><p>Install <strong>certbot</strong>:</p>
-<pre><code>$ apt-get install certbot</code></pre></li>
-<li><p>Install certbot <strong>plugin</strong> for nginx (<code>python3-certbot-nginx</code>):</p>
-<pre><code>$ apt-get install python3-certbot-nginx</code></pre></li>
+<li><strong>ssh</strong> into our server</li>
+<li>Install <strong>nginx</strong>:</li>
 </ol>
+<pre><code>$ apt-get install nginx</code></pre>
+<ol start="3" type="1">
+<li>Install <strong>docker</strong>:<br />
+(<a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a>)</li>
+<li>Install <strong>certbot</strong>:</li>
+</ol>
+<pre><code>$ apt-get install certbot</code></pre>
+<ol start="5" type="1">
+<li>Install certbot <strong>plugin</strong> for nginx (<code>python3-certbot-nginx</code>):</li>
+</ol>
+<pre><code>$ apt-get install python3-certbot-nginx</code></pre>
 <h3 id="configuration-steps">Configuration steps</h3>
 <ol type="1">
-<li><p>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>:</p>
+<li>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>:</li>
+</ol>
 <pre><code>$ nano /etc/nginx/conf.d/default.conf</code></pre>
 <p>Add entries for two new server sections:</p>
 <pre><code>...
 server {
-    listen 80;
-    server_name example.com;
-    location / {
-        proxy_pass  http://127.0.0.1:8001/;
-    }
+   listen 80;
+   server_name example.com;
+   location / {
+       proxy_pass  http://127.0.0.1:8001/;
+   }
 }
 
 server {
-    listen 80;
-    server_name api.example.com;
-    location / {
-        proxy_pass  http://127.0.0.1:8002/;
-    }
+   listen 80;
+   server_name api.example.com;
+   location / {
+       proxy_pass  http://127.0.0.1:8002/;
+   }
 }
-...</code></pre></li>
-</ol>
+...</code></pre>
