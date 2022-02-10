@@ -10,7 +10,7 @@ pipelines.
 Obvious first response is to use docker for our applications in different
 environmemt.
 
-But how woule we route traffic from incoming requests into various docker
+But how would we route traffic from incoming requests into various docker
 containers?
 
 The answer is to use nginx as a reverse proxy and route traffic based on domain
