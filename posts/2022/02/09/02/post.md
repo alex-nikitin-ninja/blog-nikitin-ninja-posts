@@ -82,7 +82,14 @@ server {
 }
 ...
 ```
-2. Save the file and run certbot 
+2. Save the file and run a new certificate retrieval:
+```
+$ certbot --nginx -d example.com
+```
+```
+$ certbot --nginx -d api.example.com
+```
+
 
 
 
