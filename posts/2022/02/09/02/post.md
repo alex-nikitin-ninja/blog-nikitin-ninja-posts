@@ -40,19 +40,19 @@ We have:
 ### Installation steps
 1. **ssh** into our server
 2. Install **nginx**:
-```
-$ apt-get install nginx
-```
+   ```
+   $ apt-get install nginx
+   ```
 3. Install **docker**:  
    ([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/))
 4. Install **certbot**:
-```
-$ apt-get install certbot
-```
+   ```
+   $ apt-get install certbot
+   ```
 5. Install certbot **plugin** for nginx (`python3-certbot-nginx`):
-```
-$ apt-get install python3-certbot-nginx
-```
+   ```
+   $ apt-get install python3-certbot-nginx
+   ```
 
 ### Configuration steps
 
