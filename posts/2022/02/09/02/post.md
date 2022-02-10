@@ -30,9 +30,10 @@ We have:
 
 - a FQDN: example.com
 - a VPS or bare metal server
-- an api backend web application wrapped into container image (let's call it
-  api-container)
-- a SPA application
+- an api backend web application wrapped into a container image (let's call it
+  `api-container`)
+- a SPA web application wrapped into another container image (let's call it
+  `spa-container`)
 
 following text
 
