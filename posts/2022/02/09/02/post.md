@@ -39,9 +39,9 @@ We have:
 
 ### Installation steps
 1. ssh into our server
-2. install nginx
-3. install docker
-4. install certbot
-5. install certbot plugin for nginx (python3-certbot-nginx)
+2. install *nginx*
+3. install *docker*
+4. install *certbot*
+5. install certbot *plugin* for nginx (`python3-certbot-nginx`)
 
 
