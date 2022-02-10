@@ -1,5 +1,7 @@
 # nginx + letsencrypt + docker = multistack web app
 
+Difficulty Level: `entry`
+
 Imagine that we have a few different web services which work on different
 languages, environment with its own configuration set.
 
@@ -18,7 +20,7 @@ name or path name.
 
 And for taste of being encrypted and have all those services and microservices
 behind https we use free `Let's encrypt` certificates and their bot to keep
-everything up-to-date automatically.
+certificates and configuration up-to-date automatically.
 
 -more-
 
