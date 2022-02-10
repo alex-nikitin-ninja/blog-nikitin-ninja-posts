@@ -39,9 +39,9 @@ We have:
 
 ### Installation steps
 1. **ssh** into our server
-   ```
+```
    apt-get install nginx
-   ```
+```
 2. install **nginx**
 3. install **docker**
 4. install **certbot**
