@@ -28,7 +28,7 @@ certificates and configuration up-to-date automatically.
 
 We have:
 
-- a FQDN: example.com
+- a FQDN: `example.com`
 - a VPS or bare metal server
 - an api backend web application wrapped into a container image (let's call it
   `api-container`)
