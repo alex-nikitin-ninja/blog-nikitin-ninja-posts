@@ -140,8 +140,10 @@ server {
 ```
 
 4. Verify that both url can be opened in browser via http and https protocols by:
+
 [http://example.com](http://example.com)  
 [http://api.example.com](http://api.example.com)  
+
 As of now nginx should respond with 502 error code, because we did not start our
 docker application instances
 
