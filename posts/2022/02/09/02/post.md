@@ -29,7 +29,7 @@ certificates and configuration up-to-date automatically.
 We have:
 
 - a FQDN: `example.com`
-- a VPS or bare metal `server`
+- a VPS or bare metal `server` (let's say debian/ubuntu)
 - an api backend web application wrapped into a container image (let's call it
   `api-container`)
 - a SPA web application wrapped into another container image (let's call it
@@ -40,7 +40,7 @@ We have:
 ### Installation steps
 1. **ssh** into our server
 ```
-apt-get install nginx
+$ apt-get install nginx
 ```
 2. install **nginx**
 3. install **docker**
