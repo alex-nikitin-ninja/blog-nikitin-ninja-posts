@@ -61,7 +61,8 @@ $ apt-get install python3-certbot-nginx
 ```
 $ nano /etc/nginx/conf.d/default.conf
 ```
-add entries for two new server sections:
+
+2. add entries for two new server sections:
 ```
 ...
 server {
