@@ -30,6 +30,8 @@ We have:
 
 - a FQDN: example.com
 - a VPS or bare metal server
+- an api backend web application wrapped into Container Image
+- a SPA application
 
 
 
