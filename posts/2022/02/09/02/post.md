@@ -29,11 +29,15 @@ certificates and configuration up-to-date automatically.
 We have:
 
 - a FQDN: `example.com`
-- a VPS or bare metal server
+- a VPS or bare metal `server`
 - an api backend web application wrapped into a container image (let's call it
   `api-container`)
 - a SPA web application wrapped into another container image (let's call it
   `spa-container`)
 
-following text
+## Action
 
+1. ssh into our server
+2. install nginx
+3. install docker
+4. install certbot
