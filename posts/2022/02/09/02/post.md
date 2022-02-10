@@ -30,7 +30,7 @@ We have:
 
 - a FQDN: `example.com`
 - a VPS or bare metal `server` (let's say debian/ubuntu)
-- `example.com` domain has a DNS record pointing to our server interface
+- example.com domain has a `DNS record` pointing to our server interface
 - an api backend web application wrapped into a container image (let's call it
 `api-container`  and let's assume it needs to respond to `api.example.com`)
 - a SPA web application wrapped into another container image (let's call it
