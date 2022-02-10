@@ -57,7 +57,7 @@ $ apt-get install python3-certbot-nginx
 ### Configuration steps
 
 1. Configure **nginx** to work as a reverse proxy for `spa-container` and
-`api-container`:
+`api-container`, so open conf file (use editor of your choise nano/vi/vim/etc):
 ```
 $ nano /etc/nginx/conf.d/default.conf
 ```
