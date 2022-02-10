@@ -148,7 +148,7 @@ server {
 [http://api.example.com](http://api.example.com)  
 [https://api.example.com](https://api.example.com)  
 
-As of now nginx should respond with 502 error code, because we did not start our
-docker application instances
+As of now nginx should respond with `502 Bad Gateway` error code, because we did
+not start our docker application instances
 
 
