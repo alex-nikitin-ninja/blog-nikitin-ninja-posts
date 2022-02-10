@@ -88,7 +88,7 @@ one cert for each domain:
 $ certbot --nginx -d example.com
 $ certbot --nginx -d api.example.com
 ```
-or single certificate covering two domains:
+or a single certificate covering two domains:
 ```
 $ certbot --nginx -d example.com -d api.example.com
 ```
