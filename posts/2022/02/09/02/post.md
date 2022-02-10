@@ -22,4 +22,5 @@ everything updated automatically.
 
 -more-
 
-text after cut
+## Entry details
+
