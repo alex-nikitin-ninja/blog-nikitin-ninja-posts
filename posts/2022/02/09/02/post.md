@@ -18,7 +18,7 @@ name or path name.
 
 And for taste of being encrypted and work all those services and microservices
 behind https we use free let's encrypt certificates and their bots to keep
-everything updated automactiaclly.
+everything updated automatically.
 
 -more-
 
