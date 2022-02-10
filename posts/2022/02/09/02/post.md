@@ -46,7 +46,13 @@ $ apt-get install nginx
 3. install **docker**
    ([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/))
 4. install **certbot**
+```
+$ apt-get install certbot
+```
 5. install certbot **plugin** for nginx (`python3-certbot-nginx`)
+```
+$ apt-get install python3-certbot-nginx
+```
 
 ### Configuration steps
 
