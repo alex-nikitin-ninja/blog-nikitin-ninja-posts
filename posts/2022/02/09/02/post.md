@@ -100,7 +100,7 @@ $ certbot --nginx -d example.com -d api.example.com
 ```
 Follow instructions from console and follow to the next step
 
-3. Verify certificates being added to nginx configuration:
+3. Verify certificates being added to nginx configuration (lines commented as `# managed by Certbot`):
 ```
 ...
 server {
