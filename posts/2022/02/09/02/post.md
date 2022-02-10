@@ -39,22 +39,23 @@ We have:
 
 ### Installation steps
 1. **ssh** into our server
-2. install **nginx**
+2. Install **nginx**
 ```
 $ apt-get install nginx
 ```
-3. install **docker**  
+3. Install **docker**  
    ([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/))
-4. install **certbot**
+4. Install **certbot**
 ```
 $ apt-get install certbot
 ```
-5. install certbot **plugin** for nginx (`python3-certbot-nginx`)
+5. Install certbot **plugin** for nginx (`python3-certbot-nginx`)
 ```
 $ apt-get install python3-certbot-nginx
 ```
 
 ### Configuration steps
 
-1. Configure apache to work as a reverse proxy for 
+1. Configure nginx to work as a reverse proxy for `spa-container` and
+   `api-container`
 
