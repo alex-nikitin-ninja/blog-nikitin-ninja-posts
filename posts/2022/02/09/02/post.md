@@ -99,6 +99,7 @@ or a single certificate covering two domains:
 $ certbot --nginx -d example.com -d api.example.com
 ```
 Follow instructions from console and follow to the next step
+
 3. Verify certificates being added to nginx configuration:
 ```
 ...
