@@ -24,4 +24,9 @@ everything up-to-date automatically.
 
 ## Input data
 
-We have a FQDN: 
+We have a FQDN: chiken.com
+
+We have a VPS or bare metal server
+
+
+
