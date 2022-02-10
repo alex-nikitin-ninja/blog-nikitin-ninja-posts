@@ -57,7 +57,9 @@ server {
 }
 ...</code></pre>
 <ol start="2" type="1">
-<li>Save the file and run a new certificate retrieval:</li>
+<li>Save the file and run a new certificate retrieval: one cert for each domain:</li>
 </ol>
 <pre><code>$ certbot --nginx -d example.com
 $ certbot --nginx -d api.example.com</code></pre>
+<p>or single certificate covering two domains:</p>
+<pre><code>$ certbot --nginx -d example.com -d api.example.com</code></pre>
