@@ -7,8 +7,18 @@ What would be the approach of running them application locally or on live
 environment easeily without overengineering and easy deployment process with CI
 pipelines.
 
-Obvious first response is to use nginx as a reverse proxy server to handle all
-our incoming requests.
+Obvious first response is to use docker for our applications in different
+environmemt.
+
+But how woule we route traffic from incoming requests into various docker
+containers?
+
+The answer is to use nginx as a reverse proxy and route traffic based on domain
+name or path name.
+
+And for taste of being encrypted and work all those services and microservices
+behind https we use free let's encrypt certificates and their bots to keep
+everything updated automactiaclly.
 
 -more-
 
