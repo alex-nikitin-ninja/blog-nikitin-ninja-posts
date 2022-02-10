@@ -1,9 +1,10 @@
 <h1 id="nginx-letsencrypt-docker-multistack-web-app">nginx + letsencrypt + docker = multistack web app</h1>
-<p>Imagine that we have a few different web services which work on different languages, configuration and environment.</p>
-<p>What would be the approach of running them application locally or on live environment easily without overengineering and easy deployment process with CI pipelines.</p>
-<p>Obvious first response is to use docker for our applications in different environmemt.</p>
+<p>Imagine that we have a few different web services which work on different languages, environment with its own configuration set.</p>
+<p>What would be the approach of running applications on staging or live environment easily without overengineering and easy deployment process with CI pipelines.</p>
+<p>Obvious first response is to use <code>docker</code> for wrapping our applications into different environmemts.</p>
 <p>But how would we route traffic from incoming requests into various docker containers?</p>
-<p>The answer is to use nginx as a reverse proxy and route traffic based on domain name or path name.</p>
-<p>And for taste of being encrypted and work all those services and microservices behind https we use free let’s encrypt certificates and their bots to keep everything updated automatically.</p>
+<p>The answer is to use <code>nginx</code> as a reverse proxy and route traffic based on domain name or path name.</p>
+<p>And for taste of being encrypted and have all those services and microservices behind https we use free let’s encrypt certificates and their bot to keep everything up-to-date automatically.</p>
 <p>-more-</p>
-<h2 id="entry-details">Entry details</h2>
+<h2 id="input-data">Input data</h2>
+<p>We have a FQDN:</p>
