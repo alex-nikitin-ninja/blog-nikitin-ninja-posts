@@ -31,9 +31,9 @@ We have:
 - a FQDN: `example.com`
 - a VPS or bare metal `server` (let's say debian/ubuntu)
 - an api backend web application wrapped into a container image (let's call it
-  `api-container`)
+  `api-container`  and let's assume it needs to respond to `api.example.com`)
 - a SPA web application wrapped into another container image (let's call it
-  `spa-container`)
+  `spa-container` and let's assume it needs to respond to `example.com` directly)
 
 ## Action
 
@@ -55,4 +55,6 @@ $ apt-get install python3-certbot-nginx
 ```
 
 ### Configuration steps
+
+1. Configure apache to work as a reverse proxy for 
 

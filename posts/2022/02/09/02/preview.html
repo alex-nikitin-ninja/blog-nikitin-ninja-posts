@@ -12,8 +12,8 @@
 <ul>
 <li>a FQDN: <code>example.com</code></li>
 <li>a VPS or bare metal <code>server</code> (let’s say debian/ubuntu)</li>
-<li>an api backend web application wrapped into a container image (let’s call it <code>api-container</code>)</li>
-<li>a SPA web application wrapped into another container image (let’s call it <code>spa-container</code>)</li>
+<li>an api backend web application wrapped into a container image (let’s call it <code>api-container</code> and let’s assume it needs to respond to <code>api.example.com</code>)</li>
+<li>a SPA web application wrapped into another container image (let’s call it <code>spa-container</code> and let’s assume it needs to respond to <code>example.com</code> directly)</li>
 </ul>
 <h2 id="action">Action</h2>
 <h3 id="installation-steps">Installation steps</h3>
@@ -33,3 +33,6 @@
 </ol>
 <pre><code>$ apt-get install python3-certbot-nginx</code></pre>
 <h3 id="configuration-steps">Configuration steps</h3>
+<ol type="1">
+<li>Configure apache to work as a reverse proxy for</li>
+</ol>
