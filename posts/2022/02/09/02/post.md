@@ -1,8 +1,8 @@
-![&nbsp;](images/schema.png "Schema")
-
 # nginx + letsencrypt + docker = multistack web app
 
 **Difficulty Level**: entry
+
+![&nbsp;](images/schema.png "Schema")
 
 Imagine that we have a few different web services which work on different
 languages, environment with its own configuration set.
