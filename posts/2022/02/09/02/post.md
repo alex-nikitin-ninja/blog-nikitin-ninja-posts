@@ -113,9 +113,10 @@ $ certbot --nginx -d example.com -d api.example.com
 Follow instructions from console and follow to the next step 3.
 
 3. Verify certificates being added to nginx configuration (lines commented as
-`# managed by Certbot`):
-(note fancy thing - we can add `http2` keyword option next to the listening port
-and nginx will be serving all connections with the new version of protocol)
+`# managed by Certbot`):  
+*(note fancy thing - we can add `http2` keyword option next to the listening
+port and nginx will be serving all connections with the new version of
+protocol)*
 ```
 ...
 server {
