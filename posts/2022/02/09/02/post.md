@@ -21,8 +21,8 @@ The answer is to use **nginx** as a reverse proxy and route traffic based on dom
 name or path name.
 
 And for taste of being encrypted and have all those services and microservices
-behind https we use free **Let's encrypt** certificates and their bot to keep
-certificates and configuration up-to-date automatically.
+behind **https** we use free **Let's encrypt** certificates and their bot to
+keep certificates and configuration up-to-date automatically.
 
 Let's see how can we do this...
 
