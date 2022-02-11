@@ -94,12 +94,12 @@ server {
 }
 ...
 ```
-Then do conf file syntax validation and apply it with `reload` command:
+Then save the file, do syntax validation and apply it with `reload` command:
 ```
 $ sudo nginx -t && sudo nginx -s reload
 ```
 
-2. Save the file and run a new certificate retrieval:
+2. Now we're ready to run a new certificate retrieval:
 one cert for each domain:
 ```
 $ certbot --nginx -d example.com

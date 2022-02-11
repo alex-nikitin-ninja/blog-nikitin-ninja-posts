@@ -67,10 +67,10 @@ server {
     }
 }
 ...</code></pre>
-<p>Then do conf file syntax validation and apply it with <code>reload</code> command:</p>
+<p>Then save the file, do syntax validation and apply it with <code>reload</code> command:</p>
 <pre><code>$ sudo nginx -t &amp;&amp; sudo nginx -s reload</code></pre>
 <ol start="2" type="1">
-<li>Save the file and run a new certificate retrieval: one cert for each domain:</li>
+<li>Now we’re ready to run a new certificate retrieval: one cert for each domain:</li>
 </ol>
 <pre><code>$ certbot --nginx -d example.com
 $ certbot --nginx -d api.example.com</code></pre>
