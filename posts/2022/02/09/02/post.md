@@ -167,4 +167,4 @@ docker run --rm \
 ```
 
 6. That's it, open urls from step 4 above and verify response from both
-   applications 
+   applications. 
