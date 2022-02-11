@@ -48,7 +48,7 @@ We have:
 $ apt-get install nginx
 ```
 3. Install **docker**:  
-([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/))
+*([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/))*
 4. Install **certbot**:
 ```
 $ apt-get install certbot
