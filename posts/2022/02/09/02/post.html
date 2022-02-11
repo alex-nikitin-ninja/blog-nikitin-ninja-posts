@@ -70,11 +70,12 @@ server {
 <p>Then save the file, do syntax validation and apply it with <code>reload</code> command:</p>
 <pre><code>$ sudo nginx -t &amp;&amp; sudo nginx -s reload</code></pre>
 <ol start="2" type="1">
-<li>Now we’re ready to run a new certificate retrieval: one cert for each domain:</li>
+<li>Now we’re ready to run a new certificate retrieval.<br />
+One cert for each domain:</li>
 </ol>
 <pre><code>$ certbot --nginx -d example.com
 $ certbot --nginx -d api.example.com</code></pre>
-<p>or a single certificate covering two domains:</p>
+<p>Or a single certificate covering two domains:</p>
 <pre><code>$ certbot --nginx -d example.com -d api.example.com</code></pre>
 <p>Follow instructions from console and follow to the next step 3.</p>
 <ol start="3" type="1">

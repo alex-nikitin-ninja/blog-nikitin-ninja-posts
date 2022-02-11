@@ -99,13 +99,13 @@ Then save the file, do syntax validation and apply it with `reload` command:
 $ sudo nginx -t && sudo nginx -s reload
 ```
 
-2. Now we're ready to run a new certificate retrieval:
-one cert for each domain:
+2. Now we're ready to run a new certificate retrieval.  
+One cert for each domain:
 ```
 $ certbot --nginx -d example.com
 $ certbot --nginx -d api.example.com
 ```
-or a single certificate covering two domains:
+Or a single certificate covering two domains:
 ```
 $ certbot --nginx -d example.com -d api.example.com
 ```
