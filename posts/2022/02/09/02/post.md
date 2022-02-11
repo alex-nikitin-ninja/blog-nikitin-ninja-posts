@@ -1,4 +1,4 @@
-![&nbsp;](images/schema.jpg "Schema")
+![&nbsp;](images/schema.png "Schema")
 
 # nginx + letsencrypt + docker = multistack web app
 
