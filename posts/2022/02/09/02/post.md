@@ -39,6 +39,7 @@ We have:
 ## Action
 
 ### Installation steps
+
 1. **ssh** into our server
 2. Install **nginx**:
 ```
@@ -167,4 +168,9 @@ docker run --rm \
 ```
 
 6. That's it, open urls from step 4 above and verify response from both
-   applications. 
+   applications through http and https protocols.
+
+## Conclusion
+In this simple excercise we did setup an Application Load Balancer based on
+nginx, then setup nginx to serve connections through https protocol and ran our
+applications in independent docker containers
