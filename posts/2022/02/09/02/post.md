@@ -1,3 +1,5 @@
+![&nbsp;](images/schema.jpg "Schema")
+
 # nginx + letsencrypt + docker = multistack web app
 
 **Difficulty Level**: entry
