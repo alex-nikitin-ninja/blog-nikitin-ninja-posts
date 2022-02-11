@@ -4,7 +4,7 @@
 
 ![Components Schema](images/schema.png "Schema")
 
-Imagine that we have a few different web services which work on different
+**Use case**: imagine that we have a few different web services which work on different
 languages, environment with its own configuration set.
 
 What would be the approach of running applications on staging or live
