@@ -2,7 +2,7 @@
 
 **Difficulty Level**: entry
 
-![asdf](images/schema.png "Schema")
+![Components Schema](images/schema.png "Schema")
 
 Imagine that we have a few different web services which work on different
 languages, environment with its own configuration set.
