@@ -180,5 +180,10 @@ docker run --rm \
 
 ## Conclusion
 In this simple excercise we did setup an Application Load Balancer based on
-nginx, then setup nginx to serve connections through https protocol and ran our
-applications in independent docker containers
+**nginx**, then setup **nginx** to serve connections through **https** protocol
+with certificates retrieved from **let's encrypt** and ran our applications in
+independent **docker** containers.
+
+The key point is that the whole setup is very cheap if not free and can be done
+quickly and easily with almost no deep knowledge. Benefit of using **certbot**
+is automated updates when certificate renewal time comes (setup and forget).
