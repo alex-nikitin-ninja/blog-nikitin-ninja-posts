@@ -165,3 +165,6 @@ docker run --rm \
     --name api-container \
     -d api-container:latest
 ```
+
+6. That's it, open urls from step 4 above and verify response from both
+   applications 
