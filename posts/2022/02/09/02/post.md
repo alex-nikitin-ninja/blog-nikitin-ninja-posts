@@ -9,7 +9,7 @@ languages, environment with its own configuration set.
 
 What would be the approach of running applications on staging or live
 environment easily without over-engineering and easy deployment process with CI
-pipelines.
+pipelines when time comes.
 
 Obvious first response is to use **docker** for wrapping our applications into
 different environments.
