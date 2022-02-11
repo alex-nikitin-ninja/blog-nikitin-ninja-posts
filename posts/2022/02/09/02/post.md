@@ -8,11 +8,11 @@ Imagine that we have a few different web services which work on different
 languages, environment with its own configuration set.
 
 What would be the approach of running applications on staging or live
-environment easily without overengineering and easy deployment process with CI
+environment easily without over-engineering and easy deployment process with CI
 pipelines.
 
 Obvious first response is to use **docker** for wrapping our applications into
-different environmemts.
+different environments.
 
 But how would we route traffic from incoming requests into various docker
 containers?
@@ -33,7 +33,7 @@ Let's see how can we do this...
 We have:
 
 - a FQDN: `example.com`
-- a VPS or bare metal `server` (let's say debian/ubuntu)
+- a VPS or bare metal `server` (let's say Debian/Ubuntu)
 - example.com domain has a `DNS record` pointing to our server interface
 - an api backend web application wrapped into a container image (let's call it
 `api-container`  and let's assume it needs to respond to `api.example.com`)
@@ -64,7 +64,7 @@ $ apt-get install python3-certbot-nginx
 *(make sure to use `sudo` command as needed)*
 
 1. Configure **nginx** to work as a reverse proxy for `spa-container` and
-`api-container`, so open conf file (use editor of your choise nano/vi/vim/etc):
+`api-container`, so open conf file (use editor of your choice nano/vi/vim/etc):
 ```
 $ nano /etc/nginx/conf.d/default.conf
 ```
@@ -113,7 +113,7 @@ Follow instructions from console and follow to the next step
 
 3. Verify certificates being added to nginx configuration (lines commented as `# managed by Certbot`):
 (note fancy thing - we can add http2 keyword option next to the listening port
-and nginx will be servig all connections with the new version of protocol)
+and nginx will be serving all connections with the new version of protocol)
 ```
 ...
 server {
@@ -191,7 +191,7 @@ System (AWS ACM).
 
 
 ## Conclusion
-In this simple excercise we did setup an Application Load Balancer based on
+In this simple exercise we did setup an Application Load Balancer based on
 **nginx**, then setup **nginx** to serve connections through **https** protocol
 with certificates retrieved from **let's encrypt** and ran our applications in
 independent **docker** containers.

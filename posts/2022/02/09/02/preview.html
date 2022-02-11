@@ -4,8 +4,8 @@
 <img src="images/schema.png" title="Schema" alt="" /><figcaption>Components Schema</figcaption>
 </figure>
 <p>Imagine that we have a few different web services which work on different languages, environment with its own configuration set.</p>
-<p>What would be the approach of running applications on staging or live environment easily without overengineering and easy deployment process with CI pipelines.</p>
-<p>Obvious first response is to use <strong>docker</strong> for wrapping our applications into different environmemts.</p>
+<p>What would be the approach of running applications on staging or live environment easily without over-engineering and easy deployment process with CI pipelines.</p>
+<p>Obvious first response is to use <strong>docker</strong> for wrapping our applications into different environments.</p>
 <p>But how would we route traffic from incoming requests into various docker containers?</p>
 <p>The answer is to use <strong>nginx</strong> as a reverse proxy and route traffic based on domain name or path name.</p>
 <p>And for taste of being encrypted and have all those services and microservices behind https we use free <strong>Let’s encrypt</strong> certificates and their bot to keep certificates and configuration up-to-date automatically.</p>
@@ -15,7 +15,7 @@
 <p>We have:</p>
 <ul>
 <li>a FQDN: <code>example.com</code></li>
-<li>a VPS or bare metal <code>server</code> (let’s say debian/ubuntu)</li>
+<li>a VPS or bare metal <code>server</code> (let’s say Debian/Ubuntu)</li>
 <li>example.com domain has a <code>DNS record</code> pointing to our server interface</li>
 <li>an api backend web application wrapped into a container image (let’s call it <code>api-container</code> and let’s assume it needs to respond to <code>api.example.com</code>)</li>
 <li>a SPA web application wrapped into another container image (let’s call it <code>spa-container</code> and let’s assume it needs to respond to <code>example.com</code> directly)</li>
@@ -40,7 +40,7 @@
 <h3 id="configuration-steps">Configuration steps</h3>
 <p><em>(make sure to use <code>sudo</code> command as needed)</em></p>
 <ol type="1">
-<li>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>, so open conf file (use editor of your choise nano/vi/vim/etc):</li>
+<li>Configure <strong>nginx</strong> to work as a reverse proxy for <code>spa-container</code> and <code>api-container</code>, so open conf file (use editor of your choice nano/vi/vim/etc):</li>
 </ol>
 <pre><code>$ nano /etc/nginx/conf.d/default.conf</code></pre>
 <p>Add entries for two new server sections:</p>
@@ -78,7 +78,7 @@ $ certbot --nginx -d api.example.com</code></pre>
 <pre><code>$ certbot --nginx -d example.com -d api.example.com</code></pre>
 <p>Follow instructions from console and follow to the next step</p>
 <ol start="3" type="1">
-<li>Verify certificates being added to nginx configuration (lines commented as <code># managed by Certbot</code>): (note fancy thing - we can add http2 keyword option next to the listening port and nginx will be servig all connections with the new version of protocol)</li>
+<li>Verify certificates being added to nginx configuration (lines commented as <code># managed by Certbot</code>): (note fancy thing - we can add http2 keyword option next to the listening port and nginx will be serving all connections with the new version of protocol)</li>
 </ol>
 <pre><code>...
 server {
@@ -143,7 +143,7 @@ docker run --rm \
 <p>On the advanced level configuration may be more complicated. For example we can put <strong>nginx</strong> as a hardware load balancer, docker instances can be set on a separate cluster. And still quite easy to manage and setup.</p>
 <p>In terms of services which have cloud providers that would be: Application Load Balancer (ALB), Docker cluster (e.g. AWS ECR, ECS/EKS), Certificate Management System (AWS ACM).</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>In this simple excercise we did setup an Application Load Balancer based on <strong>nginx</strong>, then setup <strong>nginx</strong> to serve connections through <strong>https</strong> protocol with certificates retrieved from <strong>let’s encrypt</strong> and ran our applications in independent <strong>docker</strong> containers.</p>
+<p>In this simple exercise we did setup an Application Load Balancer based on <strong>nginx</strong>, then setup <strong>nginx</strong> to serve connections through <strong>https</strong> protocol with certificates retrieved from <strong>let’s encrypt</strong> and ran our applications in independent <strong>docker</strong> containers.</p>
 <p>The key point is that the whole setup is very cheap if not free and can be done quickly and easily with almost no deep knowledge. Benefit of using <strong>certbot</strong> is automated updates when certificate renewal time comes (setup and forget).</p>
 <p>If you have any notes, questions or errors correction, please point them in the comments below.</p>
 <p>#linux #docker #nginx #https #letsencrypt #certbot</p>
