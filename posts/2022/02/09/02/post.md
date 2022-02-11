@@ -183,7 +183,7 @@ docker run --rm \
 ## Benefits
 On the advanced level configuration may be more complicated. For example we can
 put **nginx** as a hardware load balancer, docker instances can be set on a
-separate cluster.
+separate cluster. And still quite easy to manage and setup.
 
 In terms of services which have cloud providers that would be: Application Load
 Balancer (ALB), Docker cluster (e.g. AWS ECR, ECS/EKS), Certificate Management
@@ -199,3 +199,7 @@ independent **docker** containers.
 The key point is that the whole setup is very cheap if not free and can be done
 quickly and easily with almost no deep knowledge. Benefit of using **certbot**
 is automated updates when certificate renewal time comes (setup and forget).
+
+
+If you have any notes, questions or errors correction, please point them in the
+comments below.

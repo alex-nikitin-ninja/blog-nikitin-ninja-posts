@@ -140,8 +140,9 @@ docker run --rm \
 <li>That’s it, open urls from step 4 above and verify response from both applications through http and https protocols.</li>
 </ol>
 <h2 id="benefits">Benefits</h2>
-<p>On the advanced level configuration may be more complicated. For example we can put <strong>nginx</strong> as a hardware load balancer, docker instances can be set on a separate cluster.</p>
+<p>On the advanced level configuration may be more complicated. For example we can put <strong>nginx</strong> as a hardware load balancer, docker instances can be set on a separate cluster. And still quite easy to manage and setup.</p>
 <p>In terms of services which have cloud providers that would be: Application Load Balancer (ALB), Docker cluster (e.g. AWS ECR, ECS/EKS), Certificate Management System (AWS ACM).</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this simple excercise we did setup an Application Load Balancer based on <strong>nginx</strong>, then setup <strong>nginx</strong> to serve connections through <strong>https</strong> protocol with certificates retrieved from <strong>let’s encrypt</strong> and ran our applications in independent <strong>docker</strong> containers.</p>
 <p>The key point is that the whole setup is very cheap if not free and can be done quickly and easily with almost no deep knowledge. Benefit of using <strong>certbot</strong> is automated updates when certificate renewal time comes (setup and forget).</p>
+<p>If you have any notes, questions or errors correction, please point them in the comments below.</p>
