@@ -100,6 +100,7 @@ $ sudo nginx -t && sudo nginx -s reload
 ```
 
 2. Now we're ready to run a new certificate retrieval.  
+
 One cert for each domain:
 ```
 $ certbot --nginx -d example.com
