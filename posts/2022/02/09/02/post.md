@@ -28,7 +28,7 @@ Let's see how can we do this...
 
 -more-
 
-## Input data
+## Input details
 
 We have:
 
