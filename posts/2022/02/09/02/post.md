@@ -59,6 +59,7 @@ $ apt-get install python3-certbot-nginx
 ```
 
 ### Configuration steps
+(make sure to use `sudo` command as needed)
 
 1. Configure **nginx** to work as a reverse proxy for `spa-container` and
 `api-container`, so open conf file (use editor of your choise nano/vi/vim/etc):
@@ -91,6 +92,11 @@ server {
 }
 ...
 ```
+Then do conf file syntax validation and apply it with `reload` command:
+```
+$ sudo nginx -t && sudo nginx -s reload
+```
+
 2. Save the file and run a new certificate retrieval:
 one cert for each domain:
 ```
