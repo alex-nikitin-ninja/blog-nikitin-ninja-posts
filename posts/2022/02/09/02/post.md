@@ -180,6 +180,16 @@ docker run --rm \
 6. That's it, open urls from step 4 above and verify response from both
    applications through http and https protocols.
 
+## Benefits
+On the advanced level configuration may be more complicated. For example we can
+put **nginx** as a hardware load balancer, docker instances can be set on a
+separate cluster.
+
+In terms of services which have cloud providers that would be: Application Load
+Balancer (ALB), Docker cluster (e.g. AWS ECR, ECS/EKS), Certificate Management
+System (AWS ACM).
+
+
 ## Conclusion
 In this simple excercise we did setup an Application Load Balancer based on
 **nginx**, then setup **nginx** to serve connections through **https** protocol
