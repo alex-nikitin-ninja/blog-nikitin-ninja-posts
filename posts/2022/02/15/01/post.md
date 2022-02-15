@@ -56,6 +56,9 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
+Indexes - TBD, but logically, that need to be the following columns `next_read`,
+`max_read_cnt`, `read_cnt`, `queue_name`.
+
 ### Stored procedures - `put_message_in_queue`
 ```
 USE main_schema;
