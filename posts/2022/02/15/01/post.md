@@ -154,17 +154,15 @@ CREATE PROCEDURE delete_message_from_queue (IN _message_id BIGINT)
 BEGIN
     START TRANSACTION;
     
-    -- TODO: ...
-
     SET @_id = _message_id;
     SET @_now = NOW(6);
+    
     UPDATE
         main_schema.main_queue
     SET
         deleted_at = @_now
     WHERE id=@_id AND deleted_at IS NULL;
 
-    
     COMMIT;
 END //
 DELIMITER ;
