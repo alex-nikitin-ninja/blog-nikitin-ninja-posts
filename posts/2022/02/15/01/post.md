@@ -1,4 +1,4 @@
-# Simple Queue Service in MySQL
+# Simple Queue Service Analog in MySQL
 
 Difficulty level: **medium**
 
@@ -27,8 +27,6 @@ For messages we need to be able to make these 3 operations:
 In this exercise we'll learn how to create tables and stored procedures.
 
 Interested...?
-
-
 
 -more-
 
