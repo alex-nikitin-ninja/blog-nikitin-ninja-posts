@@ -24,7 +24,9 @@ For messages we need to be able to make these 3 operations:
 - retrieve latest message
 - delete/soft delete message from queue
 
-Let's see how to do that
+Interested...?
+
+-more-
 
 ## Input details
 
