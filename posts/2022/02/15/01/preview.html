@@ -33,7 +33,7 @@ CREATE TABLE main_schema.main_queue (
     created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 );</code></pre>
-<p><em>Columns explanation</em>:</p>
+<p><strong>Columns explanation</strong>:</p>
 <ul>
 <li><code>id</code> - our primary key in the table.</li>
 <li><code>queue_name</code> - different queues can handle payload for different tasks.</li>
@@ -45,7 +45,7 @@ CREATE TABLE main_schema.main_queue (
 <li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion.</li>
 <li><code>created_at</code> - timestamp when message was created.</li>
 </ul>
-<p><em>Indexes</em> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
+<p><strong>Indexes</strong> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
 <h3 id="stored-procedures---put_message_in_queue">Stored procedures - <code>put_message_in_queue</code></h3>
 <pre><code>USE main_schema;
 DROP FUNCTION put_message_in_queue;

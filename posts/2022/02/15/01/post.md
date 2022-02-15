@@ -56,7 +56,7 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
-*Columns explanation*:
+**Columns explanation**:
 
 - `id` - our primary key in the table.
 - `queue_name` - different queues can handle payload for different tasks.
@@ -71,7 +71,7 @@ deletion.
 - `created_at` - timestamp when message was created.
 
 
-*Indexes* - TBD, but according to the code in the stored procedures, that need
+**Indexes** - TBD, but according to the code in the stored procedures, that need
 to be the following columns `next_read`, `max_read_cnt`, `read_cnt`,
 `queue_name`.
 
