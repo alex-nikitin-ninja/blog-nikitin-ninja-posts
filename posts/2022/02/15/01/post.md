@@ -52,6 +52,7 @@ CREATE TABLE main_schema.main_queue (
     next_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
     invisibility_time BIGINT DEFAULT 0,
     created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP,
+    deleted_at DATETIME(6) DEFAULT NULL,
     PRIMARY KEY(id)
 );
 ```
@@ -136,6 +137,32 @@ BEGIN
     WHERE id=@id;
     
     SELECT * FROM main_schema.main_queue WHERE id = @id FOR UPDATE;
+    
+    COMMIT;
+END //
+DELIMITER ;
+-- CALL main_schema.get_message_from_queue('default')
+```
+
+### Stored procedures - `delete_message_from_queue`
+```
+USE main_schema;
+DROP PROCEDURE get_message_from_queue;
+DELIMITER //
+CREATE PROCEDURE get_message_from_queue (IN _message_id BIGINT)
+BEGIN
+    START TRANSACTION;
+    
+    -- TODO: ...
+
+    SET @_id = _message_id;
+    SET @_now = NOW(6);
+    UPDATE
+        main_schema.main_queue
+    SET
+        deleted_at = @_now
+    WHERE id=@_id AND deleted_at IS NULL;
+
     
     COMMIT;
 END //
