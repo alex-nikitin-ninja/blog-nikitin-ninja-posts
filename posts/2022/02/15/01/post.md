@@ -79,8 +79,9 @@ deletion.
 `created_at` - timestamp when message was created.
 
 
-Indexes - TBD, but according to the code in the stored procedures, that need to
-be the following columns `next_read`, `max_read_cnt`, `read_cnt`, `queue_name`.
+*Indexes* - TBD, but according to the code in the stored procedures, that need
+to be the following columns `next_read`, `max_read_cnt`, `read_cnt`,
+`queue_name`.
 
 ### Stored procedures - `put_message_in_queue`
 ```
