@@ -24,7 +24,11 @@ For messages we need to be able to make these 3 operations:
 - retrieve latest message
 - delete/soft delete message from queue
 
+In this exercise we'll learn how to create tables and stored procedures.
+
 Interested...?
+
+
 
 -more-
 
