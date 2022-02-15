@@ -36,8 +36,8 @@ Database/language: **MySQL**/**SQL**
 
 ## Implementation
 
-Let's assume we use a database name `main_schema`. We need to create a table,
-then related stored procedures.
+Let's assume we use a database name `main_schema`. We need to create a primary
+table, then related stored procedures.
 
 ### Tables creation
 ```
