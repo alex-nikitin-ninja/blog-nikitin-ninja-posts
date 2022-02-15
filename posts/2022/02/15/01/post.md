@@ -1,0 +1,123 @@
+# Simple Queue Service in MySQL
+
+Difficulty level: **medium**
+
+SQS is a service which allows developers to create queues, put messages in them,
+and depends on several conditions retrieve them.
+
+One of the use case is to send different tasks between various worker instances
+
+## Objectives
+
+Create a service where we can create described earlier types of messages.
+
+Be able to retrieve messages, see if there's any tables locks and not able to
+retrieve messages more that twice within given period of time.
+
+Use MySQL compatible database (Maria DB, AWS Aurora, MemSQL, etc) for simplicity
+of implementation, wide support, etc.
+
+
+For messages we need to be able to make these 3 operations:
+
+- put message in queue
+- retrieve latest message
+- delete/soft delete message from queue
+
+
+## Input details
+
+Database and language: **MySQL**
+
+## Implementation
+
+Let's assume we use a database name `main_schema` and we create a table 
+
+### Tables creation
+```
+-- TABLES
+DROP TABLE main_schema.main_queue;
+CREATE TABLE main_schema.main_queue (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    queue_name VARCHAR(64) DEFAULT 'default',
+    payload MEDIUMTEXT,
+    read_cnt BIGINT DEFAULT 0,
+    max_read_cnt BIGINT DEFAULT 1,
+    last_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
+    next_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
+    invisibility_time BIGINT DEFAULT 0,
+    created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
+```
+
+### Stored procedures - `put_message_in_queue`
+```
+USE main_schema;
+DROP FUNCTION put_message_in_queue;
+DELIMITER //
+CREATE FUNCTION put_message_in_queue (_queue_name VARCHAR(64), _payload MEDIUMTEXT, _max_read_cnt BIGINT, _invisibility_time BIGINT)
+RETURNS BIGINT
+DETERMINISTIC
+BEGIN
+    SET @queue_name = _queue_name;
+    SET @payload = _payload;
+    SET @max_read_cnt = _max_read_cnt;
+    SET @invisibility_time = _invisibility_time;
+
+    INSERT INTO main_schema.main_queue
+        (queue_name, payload, max_read_cnt, invisibility_time)
+    VALUES
+        (@queue_name, @payload, @max_read_cnt, @invisibility_time);
+
+    SET @LID = LAST_INSERT_ID();
+
+    RETURN @LID;
+END //
+DELIMITER ;
+-- SELECT put_message_in_queue ('default', '{}', 1, 0);
+```
+
+### Stored procedures - `get_message_from_queue`
+```
+USE main_schema;
+DROP PROCEDURE get_message_from_queue;
+DELIMITER //
+CREATE PROCEDURE get_message_from_queue (IN _queue_name VARCHAR(64), IN _worker_id VARCHAR(64))
+BEGIN
+    START TRANSACTION;
+    
+    SET @queue_name = _queue_name;
+    SET @_now = NOW(6);
+    SET @id = (
+        SELECT
+            id
+        FROM
+            main_schema.main_queue
+        WHERE
+            next_read < @_now
+            AND (max_read_cnt = 0 || (max_read_cnt != 0 AND max_read_cnt > read_cnt))
+            AND queue_name=@queue_name
+        ORDER BY id
+        LIMIT 1
+        FOR UPDATE);
+    
+    UPDATE
+        main_schema.main_queue
+    SET
+        last_read = @_now,
+        read_cnt = read_cnt + 1,
+        next_read = DATE_ADD(@_now, INTERVAL invisibility_time SECOND)
+    WHERE id=@id;
+    
+    SELECT * FROM main_schema.main_queue WHERE id = @id FOR UPDATE;
+    
+    COMMIT;
+END //
+DELIMITER ;
+-- CALL main_schema.get_message_from_queue('', '')
+```
+
+## Usage
+
+
