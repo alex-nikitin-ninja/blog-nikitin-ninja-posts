@@ -147,9 +147,9 @@ DELIMITER ;
 ### Stored procedures - `delete_message_from_queue`
 ```
 USE main_schema;
-DROP PROCEDURE get_message_from_queue;
+DROP PROCEDURE delete_message_from_queue;
 DELIMITER //
-CREATE PROCEDURE get_message_from_queue (IN _message_id BIGINT)
+CREATE PROCEDURE delete_message_from_queue (IN _message_id BIGINT)
 BEGIN
     START TRANSACTION;
     
@@ -167,7 +167,7 @@ BEGIN
     COMMIT;
 END //
 DELIMITER ;
--- CALL main_schema.get_message_from_queue('default')
+-- CALL main_schema.delete_message_from_queue(1)
 ```
 
 ## Usage
