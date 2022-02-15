@@ -56,8 +56,8 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
-`id` - id  
-`queue_name` - queue_name  
+`id` - our primary key in the table  
+`queue_name` - different queues can handle for   
 `payload` - payload  
 `read_cnt` - read_cnt  
 `max_read_cnt` - max_read_cnt  
@@ -101,7 +101,7 @@ DELIMITER ;
 USE main_schema;
 DROP PROCEDURE get_message_from_queue;
 DELIMITER //
-CREATE PROCEDURE get_message_from_queue (IN _queue_name VARCHAR(64), IN _worker_id VARCHAR(64))
+CREATE PROCEDURE get_message_from_queue (IN _queue_name VARCHAR(64))
 BEGIN
     START TRANSACTION;
     
@@ -133,7 +133,7 @@ BEGIN
     COMMIT;
 END //
 DELIMITER ;
--- CALL main_schema.get_message_from_queue('', '')
+-- CALL main_schema.get_message_from_queue('default')
 ```
 
 ## Usage
