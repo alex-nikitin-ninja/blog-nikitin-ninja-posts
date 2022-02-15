@@ -34,15 +34,17 @@ CREATE TABLE main_schema.main_queue (
     PRIMARY KEY(id)
 );</code></pre>
 <p><em>Columns explanation</em>:</p>
-<p><code>id</code> - our primary key in the table.</p>
-<p><code>queue_name</code> - different queues can handle payload for different tasks.</p>
-<p><code>payload</code> - our message to be delivered.</p>
-<p><code>read_cnt</code> - this counter indicates how many times message been read already.</p>
-<p><code>max_read_cnt</code> - limit how many times the message can be delivered.</p>
-<p><code>last_read</code> - mark last time message being read.</p>
-<p><code>next_read</code> - timestamp when message is visible for reading.</p>
-<p><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion.</p>
-<p><code>created_at</code> - timestamp when message was created.</p>
+<ul>
+<li><code>id</code> - our primary key in the table.</li>
+<li><code>queue_name</code> - different queues can handle payload for different tasks.</li>
+<li><code>payload</code> - our message to be delivered.</li>
+<li><code>read_cnt</code> - this counter indicates how many times message been read already.</li>
+<li><code>max_read_cnt</code> - limit how many times the message can be delivered.</li>
+<li><code>last_read</code> - mark last time message being read.</li>
+<li><code>next_read</code> - timestamp when message is visible for reading.</li>
+<li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion.</li>
+<li><code>created_at</code> - timestamp when message was created.</li>
+</ul>
 <p><em>Indexes</em> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
 <h3 id="stored-procedures---put_message_in_queue">Stored procedures - <code>put_message_in_queue</code></h3>
 <pre><code>USE main_schema;
