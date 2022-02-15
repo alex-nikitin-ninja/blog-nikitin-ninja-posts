@@ -39,10 +39,10 @@ CREATE TABLE main_schema.main_queue (
 <li><code>queue_name</code> - different queues can handle payload for different tasks.</li>
 <li><code>payload</code> - our message to be delivered.</li>
 <li><code>read_cnt</code> - this counter indicates how many times message been read already.</li>
-<li><code>max_read_cnt</code> - limit how many times the message can be delivered.</li>
+<li><code>max_read_cnt</code> - limit how many times the message can be delivered. <code>0</code> means no limit on how many times it can be read.</li>
 <li><code>last_read</code> - mark last time message being read.</li>
 <li><code>next_read</code> - timestamp when message is visible for reading.</li>
-<li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion.</li>
+<li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion. <code>0</code> means visible immediately.</li>
 <li><code>created_at</code> - timestamp when message was created.</li>
 </ul>
 <p><strong>Indexes</strong> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>

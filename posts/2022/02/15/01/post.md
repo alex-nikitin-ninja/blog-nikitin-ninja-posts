@@ -62,12 +62,13 @@ CREATE TABLE main_schema.main_queue (
 - `queue_name` - different queues can handle payload for different tasks.
 - `payload` - our message to be delivered.
 - `read_cnt` - this counter indicates how many times message been read already.
-- `max_read_cnt` - limit how many times the message can be delivered.
+- `max_read_cnt` - limit how many times the message can be delivered. `0` means
+no limit on how many times it can be read.
 - `last_read` - mark last time message being read.
 - `next_read` - timestamp when message is visible for reading.
 - `invisibility_time` - number in seconds how long message is not available for
 retrieval (helpful if our task needs time to process the message before actual
-deletion.
+deletion. `0` means visible immediately.
 - `created_at` - timestamp when message was created.
 
 
