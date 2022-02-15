@@ -73,8 +73,8 @@ Columns explanation:
 `next_read` - timestamp when message is visible for reading
 
 `invisibility_time` - number in seconds how long message is not available for
-
-retrieval (helpful if our task needs time to process the message before actual deletion
+retrieval (helpful if our task needs time to process the message before actual
+deletion
 
 `created_at` - timestamp when message was created
 
