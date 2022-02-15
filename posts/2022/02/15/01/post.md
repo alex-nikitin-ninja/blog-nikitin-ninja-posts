@@ -56,8 +56,27 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
-Indexes - TBD, but logically, that need to be the following columns `next_read`,
-`max_read_cnt`, `read_cnt`, `queue_name`.
+`id` - id
+
+`queue_name` - queue_name
+
+`payload` - payload
+
+`read_cnt` - read_cnt
+
+`max_read_cnt` - max_read_cnt
+
+`last_read` - last_read
+
+`next_read` - next_read
+
+`invisibility_time` - invisibility_time
+
+`created_at` - created_at
+
+
+Indexes - TBD, but according to the code in the stored procedures, that need to
+be the following columns `next_read`, `max_read_cnt`, `read_cnt`, `queue_name`.
 
 ### Stored procedures - `put_message_in_queue`
 ```
