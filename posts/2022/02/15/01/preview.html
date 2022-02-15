@@ -34,14 +34,14 @@ CREATE TABLE main_schema.main_queue (
     PRIMARY KEY(id)
 );</code></pre>
 <p><code>id</code> - id<br />
-<code>queue_name</code> - queue_name</p>
-<p><code>payload</code> - payload</p>
-<p><code>read_cnt</code> - read_cnt</p>
-<p><code>max_read_cnt</code> - max_read_cnt</p>
-<p><code>last_read</code> - last_read</p>
-<p><code>next_read</code> - next_read</p>
-<p><code>invisibility_time</code> - invisibility_time</p>
-<p><code>created_at</code> - created_at</p>
+<code>queue_name</code> - queue_name<br />
+<code>payload</code> - payload<br />
+<code>read_cnt</code> - read_cnt<br />
+<code>max_read_cnt</code> - max_read_cnt<br />
+<code>last_read</code> - last_read<br />
+<code>next_read</code> - next_read<br />
+<code>invisibility_time</code> - invisibility_time<br />
+<code>created_at</code> - created_at</p>
 <p>Indexes - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
 <h3 id="stored-procedures---put_message_in_queue">Stored procedures - <code>put_message_in_queue</code></h3>
 <pre><code>USE main_schema;
