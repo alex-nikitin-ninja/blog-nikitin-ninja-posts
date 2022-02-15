@@ -124,6 +124,7 @@ BEGIN
             next_read < @_now
             AND (max_read_cnt = 0 || (max_read_cnt != 0 AND max_read_cnt > read_cnt))
             AND queue_name=@queue_name
+            AND deleted_at IS NULL
         ORDER BY id
         LIMIT 1
         FOR UPDATE);
@@ -172,4 +173,8 @@ DELIMITER ;
 
 ## Usage
 
+Basic data flow would look like described below:
+Step 1 - put message in queue with certain parameters  
+Step 2 - certain processing system gets message from there  
+Step 3 - with given details (id) from Step 2 message gets deleted  
 
