@@ -38,7 +38,6 @@ Let's assume we use a database name `main_schema` and we create a table
 
 ### Tables creation
 ```
--- TABLES
 DROP TABLE main_schema.main_queue;
 CREATE TABLE main_schema.main_queue (
     id BIGINT NOT NULL AUTO_INCREMENT,
