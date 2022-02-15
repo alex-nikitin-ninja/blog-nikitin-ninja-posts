@@ -174,6 +174,7 @@ DELIMITER ;
 ## Usage
 
 Basic data flow would look like described below:
+
 Step 1 - put message in queue with certain parameters  
 Step 2 - certain processing system gets message from there  
 Step 3 - with given details (id) from Step 2 message gets deleted  
