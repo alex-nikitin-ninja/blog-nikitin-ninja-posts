@@ -56,7 +56,7 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
-Columns explanation:
+*Columns explanation*:
 
 `id` - our primary key in the table.
 
