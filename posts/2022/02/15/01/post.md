@@ -180,4 +180,8 @@ processing system.
 
 ## Example
 
+## Conclusion
+
+In this exercise we learned how to create stored procedures and got familiar
+with messaging queue systems.
 
