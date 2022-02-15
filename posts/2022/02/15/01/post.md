@@ -56,8 +56,7 @@ CREATE TABLE main_schema.main_queue (
 );
 ```
 
-`id` - id
-
+`id` - id  
 `queue_name` - queue_name
 
 `payload` - payload
