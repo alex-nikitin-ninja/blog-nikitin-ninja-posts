@@ -222,6 +222,7 @@ SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
 -- value:
 CALL main_schema.get_message_from_queue('default');
 CALL main_schema.get_message_from_queue('default');
+```
 
 ```
 -- in this call we ensure that there's no messages to report
