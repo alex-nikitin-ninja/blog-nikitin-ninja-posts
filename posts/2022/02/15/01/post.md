@@ -297,7 +297,7 @@ mysql> SELECT * FROM main_schema.main_queue;
 In this exercise we learned how to create stored procedures and got familiar
 with messaging queue systems.
 
-When i was working on this tool - most difficult part was to make sure that
+When I was working on this tool - most difficult part was to make sure that
 Race Conditions condition does not happen when several tasks workers query the
 DB simultaneously. I was able to achieve that using transactions and proper
 rows locks with `SELECT ... FOR UPDATE` statement ([dev.mysql.com ... innodb-locking-reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)).
