@@ -72,7 +72,7 @@ retrieval (helpful if our task needs time to process the message before actual
 deletion. `0` means visible immediately.
 - `created_at` - timestamp when message was created.
 
-**Note:** number in DATETIME(6) means fraction part of seconds to store.
+**Note:** number in `DATETIME(6)` means fraction part of seconds to store.
 
 **Indexes** - TBD, but according to the code in the stored procedures, that need
 to be the following columns `next_read`, `max_read_cnt`, `read_cnt`,
