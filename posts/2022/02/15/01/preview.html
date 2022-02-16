@@ -151,24 +151,20 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
 <p>Then run all the sql scripts from above.</p>
 <h3 id="and-lets-try-it-out-in-action">And let’s try it out in action</h3>
 <p>I’m going to use the following pattern:</p>
-<pre><code>-- switch the DB for current session
-USE main_schema;</code></pre>
-<pre><code>-- we put the message in queue, and receive message id for later use or any kind
--- of logging:
-SELECT put_message_in_queue (&#39;default&#39;, &#39;{}&#39;, 2, 0) AS _message_id;</code></pre>
-<pre><code>-- in this call we output message and note that `read_cnt` counter increases its
--- value:
-CALL main_schema.get_message_from_queue(&#39;default&#39;);
+<p>Switch the DB for current session:</p>
+<pre><code>USE main_schema;</code></pre>
+<p>We put the message in queue, and receive message id for later use or any kind of logging:</p>
+<pre><code>SELECT put_message_in_queue (&#39;default&#39;, &#39;{}&#39;, 2, 0) AS _message_id;</code></pre>
+<p>In this call we output message and note that <code>read_cnt</code> counter increases its value:</p>
+<pre><code>CALL main_schema.get_message_from_queue(&#39;default&#39;);
 CALL main_schema.get_message_from_queue(&#39;default&#39;);</code></pre>
-<pre><code>-- in this call we ensure that there&#39;s no messages to report
-CALL main_schema.get_message_from_queue(&#39;default&#39;);</code></pre>
-<pre><code>-- and finally delete the message (though it&#39;s not necessary in this scenario
--- because message will not appear appear anymore because of counter over limit):
-CALL main_schema.delete_message_from_queue(1);</code></pre>
-<pre><code>-- then with direct table call we ensure that deleted_at column gets updated
--- accordingly:
-SELECT * FROM main_schema.main_queue;</code></pre>
-<p>Output:</p>
+<p>In this call we ensure that there’s no messages to report:</p>
+<pre><code>CALL main_schema.get_message_from_queue(&#39;default&#39;);</code></pre>
+<p>And finally delete the message (though it’s not necessary in this scenario because message will not appear appear anymore because of counter over limit):</p>
+<pre><code>CALL main_schema.delete_message_from_queue(1);</code></pre>
+<p>Then with direct table call we ensure that deleted_at column gets updated accordingly:</p>
+<pre><code>SELECT * FROM main_schema.main_queue;</code></pre>
+<p><strong>Output:</strong></p>
 <pre><code>mysql&gt; USE main_schema;
 Database changed
 

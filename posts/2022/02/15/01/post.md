@@ -206,42 +206,42 @@ Then run all the sql scripts from above.
 
 I'm going to use the following pattern:
 
+Switch the DB for current session:
 ```
--- switch the DB for current session
 USE main_schema;
 ```
 
+We put the message in queue, and receive message id for later use or any kind of
+logging:
 ```
--- we put the message in queue, and receive message id for later use or any kind
--- of logging:
 SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
 ```
 
+In this call we output message and note that `read_cnt` counter increases its
+value:
 ```
--- in this call we output message and note that `read_cnt` counter increases its
--- value:
 CALL main_schema.get_message_from_queue('default');
 CALL main_schema.get_message_from_queue('default');
 ```
 
+In this call we ensure that there's no messages to report:
 ```
--- in this call we ensure that there's no messages to report
 CALL main_schema.get_message_from_queue('default');
 ```
 
+And finally delete the message (though it's not necessary in this scenario
+because message will not appear appear anymore because of counter over limit):
 ```
--- and finally delete the message (though it's not necessary in this scenario
--- because message will not appear appear anymore because of counter over limit):
 CALL main_schema.delete_message_from_queue(1);
 ```
 
+Then with direct table call we ensure that deleted_at column gets updated
+accordingly:
 ```
--- then with direct table call we ensure that deleted_at column gets updated
--- accordingly:
 SELECT * FROM main_schema.main_queue;
 ```
 
-Output:
+**Output:**
 ```
 mysql> USE main_schema;
 Database changed
