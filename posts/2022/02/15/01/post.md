@@ -212,7 +212,7 @@ USE main_schema;
 
 -- we put the message in queue, and receive message id for later use or any kind
 -- of logging:
-SELECT put_message_in_queue ('default', '{}', 2, 0);
+SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
 
 -- in this call we output message and note that `read_cnt` counter increases its
 -- value:
@@ -236,7 +236,7 @@ Output:
 mysql> USE main_schema;
 Database changed
 
-mysql> SELECT put_message_in_queue ('default', '{}', 2, 0);
+mysql> SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
 +----------------------------------------------+
 | put_message_in_queue ('default', '{}', 2, 0) |
 +----------------------------------------------+
