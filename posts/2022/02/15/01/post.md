@@ -204,19 +204,91 @@ Then run all the sql scripts from above.
 
 ### And let's try it out in action
 
-```
-SELECT put_message_in_queue ('default', '{}', 1, 0);
+I'm going to use the following pattern:
 
+```
+-- switch the DB for current session
+USE main_schema;
+
+-- we put the message in queue, and receive message id for later use or any kind
+-- of logging:
+SELECT put_message_in_queue ('default', '{}', 2, 0);
+
+-- in this call we output message and note that `read_cnt` counter increases its
+-- value:
+CALL main_schema.get_message_from_queue('default');
 CALL main_schema.get_message_from_queue('default');
 
+-- in this call we ensure that there's no messages to report
+CALL main_schema.get_message_from_queue('default');
+
+-- and finally delete the message (though it's not necessary in this scenario
+-- because message will not appear appear anymore because of counter over limit):
 CALL main_schema.delete_message_from_queue(1);
+
+-- then with direct table call we ensure that deleted_at column gets updated
+-- accordingly:
+SELECT * FROM main_schema.main_queue;
 ```
 
+Output:
+```
+mysql> USE main_schema;
+Database changed
 
+mysql> SELECT put_message_in_queue ('default', '{}', 2, 0);
++----------------------------------------------+
+| put_message_in_queue ('default', '{}', 2, 0) |
++----------------------------------------------+
+|                                            1 |
++----------------------------------------------+
+1 row in set (0.01 sec)
 
+mysql> CALL main_schema.get_message_from_queue('default');
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+| id | queue_name | payload | read_cnt | max_read_cnt | last_read                  | next_read                  | invisibility_time | created_at                 | deleted_at |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+|  1 | default    | {}      |        1 |            2 | 2022-02-16 20:59:57.003972 | 2022-02-16 20:59:57.003972 |                 0 | 2022-02-16 20:59:50.915183 | NULL       |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CALL main_schema.get_message_from_queue('default');
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+| id | queue_name | payload | read_cnt | max_read_cnt | last_read                  | next_read                  | invisibility_time | created_at                 | deleted_at |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+|  1 | default    | {}      |        2 |            2 | 2022-02-16 21:00:01.527457 | 2022-02-16 21:00:01.527457 |                 0 | 2022-02-16 20:59:50.915183 | NULL       |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> CALL main_schema.get_message_from_queue('default');
+Empty set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> CALL main_schema.delete_message_from_queue(1);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM main_schema.main_queue;
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+----------------------------+
+| id | queue_name | payload | read_cnt | max_read_cnt | last_read                  | next_read                  | invisibility_time | created_at                 | deleted_at                 |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+----------------------------+
+|  1 | default    | {}      |        2 |            2 | 2022-02-16 21:00:01.527457 | 2022-02-16 21:00:01.527457 |                 0 | 2022-02-16 20:59:50.915183 | 2022-02-16 21:00:09.191801 |
++----+------------+---------+----------+--------------+----------------------------+----------------------------+-------------------+----------------------------+----------------------------+
+1 row in set (0.00 sec)
+
+```
 
 ## Conclusion
 
 In this exercise we learned how to create stored procedures and got familiar
 with messaging queue systems.
+
+When i was working on this tool - most difficult part was to make sure that
+Race Conditions condition does not happen when several tasks workers query the
+DB simultaneously. I was able to achieve that using transactions and proper
+rows locks with `SELECT ... FOR UPDATE` statement.
 
