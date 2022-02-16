@@ -46,6 +46,7 @@ CREATE TABLE main_schema.main_queue (
 <li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion. <code>0</code> means visible immediately.</li>
 <li><code>created_at</code> - timestamp when message was created.</li>
 </ul>
+<p><strong>Note:</strong> number in DATETIME(6) means fraction part of seconds to store.</p>
 <p><strong>Indexes</strong> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
 <h3 id="stored-procedures---put_message_in_queue">Stored procedures - <code>put_message_in_queue</code></h3>
 <pre><code>USE main_schema;
@@ -88,7 +89,7 @@ BEGIN
             main_schema.main_queue
         WHERE
             next_read &lt; @_now
-            AND (max_read_cnt = 0 || (max_read_cnt != 0 AND max_read_cnt &gt; read_cnt))
+            AND (max_read_cnt = 0 OR (max_read_cnt != 0 AND max_read_cnt &gt; read_cnt))
             AND queue_name=@queue_name
             AND deleted_at IS NULL
         ORDER BY id
@@ -144,6 +145,10 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
     -e MYSQL_ROOT_PASSWORD=&#39;&#39; \
     -e MYSQL_DATABASE=&#39;main_schema&#39; \
     -d mysql:8.0</code></pre>
-<h3 id="run-all-the-sql-scripts-from-above">run all the sql scripts from above</h3>
+<p>Run all the sql scripts from above.</p>
+<h3 id="and-lets-try-it-out-in-action">And let’s try it out in action</h3>
+<p>SELECT put_message_in_queue (‘default’, ‘{}’, 1, 0);</p>
+<p>CALL main_schema.get_message_from_queue(‘default’);</p>
+<p>CALL main_schema.delete_message_from_queue(1);</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise we learned how to create stored procedures and got familiar with messaging queue systems.</p>

@@ -72,6 +72,7 @@ retrieval (helpful if our task needs time to process the message before actual
 deletion. `0` means visible immediately.
 - `created_at` - timestamp when message was created.
 
+**Note:** number in DATETIME(6) means fraction part of seconds to store.
 
 **Indexes** - TBD, but according to the code in the stored procedures, that need
 to be the following columns `next_read`, `max_read_cnt`, `read_cnt`,
@@ -122,7 +123,7 @@ BEGIN
             main_schema.main_queue
         WHERE
             next_read < @_now
-            AND (max_read_cnt = 0 || (max_read_cnt != 0 AND max_read_cnt > read_cnt))
+            AND (max_read_cnt = 0 OR (max_read_cnt != 0 AND max_read_cnt > read_cnt))
             AND queue_name=@queue_name
             AND deleted_at IS NULL
         ORDER BY id
@@ -192,7 +193,16 @@ docker run --rm \
     -d mysql:8.0
 ```
 
-### run all the sql scripts from above
+Run all the sql scripts from above.
+
+### And let's try it out in action
+
+SELECT put_message_in_queue ('default', '{}', 1, 0);
+
+CALL main_schema.get_message_from_queue('default');
+
+CALL main_schema.delete_message_from_queue(1);
+
 
 
 
