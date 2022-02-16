@@ -39,7 +39,7 @@ Database/language: **MySQL**/**SQL**
 Let's assume we use a database name `main_schema`. We need to create a primary
 table, then related stored procedures.
 
-### Tables creation
+### Our primary table creation
 ```
 DROP TABLE main_schema.main_queue;
 CREATE TABLE main_schema.main_queue (
