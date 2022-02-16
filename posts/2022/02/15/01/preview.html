@@ -27,8 +27,8 @@ CREATE TABLE main_schema.main_queue (
     payload MEDIUMTEXT,
     read_cnt BIGINT DEFAULT 0,
     max_read_cnt BIGINT DEFAULT 1,
-    last_read DATETIME(6) DEFAULT &#39;2020-01-01 00:00:00&#39;,
-    next_read DATETIME(6) DEFAULT &#39;2020-01-01 00:00:00&#39;,
+    last_read DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
+    next_read DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     invisibility_time BIGINT DEFAULT 0,
     created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     deleted_at DATETIME(6) DEFAULT NULL,
@@ -137,7 +137,8 @@ DELIMITER ;
 Step 2 - certain processing system gets message from there.<br />
 Step 3 - with given details (id) from Step 2 message gets deleted by the processing system.</p>
 <h2 id="example">Example</h2>
-<h3 id="start-the-mysql-server">Start the mysql server</h3>
+<p>Assuming we’re familiar with docker</p>
+<h3 id="start-the-mysql-server">Start the MySQL server</h3>
 <pre><code>docker run --rm \
     --name main_schema_mysql \
     -p 33061:3306 \
@@ -145,10 +146,14 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
     -e MYSQL_ROOT_PASSWORD=&#39;&#39; \
     -e MYSQL_DATABASE=&#39;main_schema&#39; \
     -d mysql:8.0</code></pre>
-<p>Run all the sql scripts from above.</p>
+<p>Connect to the server any appropriate way, for example <code>mysql-cli</code>:</p>
+<pre><code>mysql --port 33061 -u root -h 127.0.0.1</code></pre>
+<p>Then run all the sql scripts from above.</p>
 <h3 id="and-lets-try-it-out-in-action">And let’s try it out in action</h3>
-<p>SELECT put_message_in_queue (‘default’, ‘{}’, 1, 0);</p>
-<p>CALL main_schema.get_message_from_queue(‘default’);</p>
-<p>CALL main_schema.delete_message_from_queue(1);</p>
+<pre><code>SELECT put_message_in_queue (&#39;default&#39;, &#39;{}&#39;, 1, 0);
+
+CALL main_schema.get_message_from_queue(&#39;default&#39;);
+
+CALL main_schema.delete_message_from_queue(1);</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise we learned how to create stored procedures and got familiar with messaging queue systems.</p>

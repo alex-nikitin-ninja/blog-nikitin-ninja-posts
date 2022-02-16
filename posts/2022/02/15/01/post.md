@@ -48,8 +48,8 @@ CREATE TABLE main_schema.main_queue (
     payload MEDIUMTEXT,
     read_cnt BIGINT DEFAULT 0,
     max_read_cnt BIGINT DEFAULT 1,
-    last_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
-    next_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
+    last_read DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
+    next_read DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     invisibility_time BIGINT DEFAULT 0,
     created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     deleted_at DATETIME(6) DEFAULT NULL,
@@ -181,7 +181,9 @@ processing system.
 
 ## Example
 
-### Start the mysql server
+Assuming we're familiar with docker
+
+### Start the MySQL server
 
 ```
 docker run --rm \
@@ -193,16 +195,22 @@ docker run --rm \
     -d mysql:8.0
 ```
 
-Run all the sql scripts from above.
+Connect to the server any appropriate way, for example `mysql-cli`:
+```
+mysql --port 33061 -u root -h 127.0.0.1
+```
+
+Then run all the sql scripts from above.
 
 ### And let's try it out in action
 
+```
 SELECT put_message_in_queue ('default', '{}', 1, 0);
 
 CALL main_schema.get_message_from_queue('default');
 
 CALL main_schema.delete_message_from_queue(1);
-
+```
 
 
 
