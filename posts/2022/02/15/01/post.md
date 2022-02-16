@@ -51,7 +51,7 @@ CREATE TABLE main_schema.main_queue (
     last_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
     next_read DATETIME(6) DEFAULT '2020-01-01 00:00:00',
     invisibility_time BIGINT DEFAULT 0,
-    created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     deleted_at DATETIME(6) DEFAULT NULL,
     PRIMARY KEY(id)
 );
@@ -179,6 +179,23 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the
 processing system.
 
 ## Example
+
+### Start the mysql server
+
+```
+docker run --rm \
+    --name main_schema_mysql \
+    -p 33061:3306 \
+    -e MYSQL_ALLOW_EMPTY_PASSWORD='yes' \
+    -e MYSQL_ROOT_PASSWORD='' \
+    -e MYSQL_DATABASE='main_schema' \
+    -d mysql:8.0
+```
+
+### run all the sql scripts from above
+
+
+
 
 ## Conclusion
 

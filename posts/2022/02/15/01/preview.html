@@ -30,7 +30,7 @@ CREATE TABLE main_schema.main_queue (
     last_read DATETIME(6) DEFAULT &#39;2020-01-01 00:00:00&#39;,
     next_read DATETIME(6) DEFAULT &#39;2020-01-01 00:00:00&#39;,
     invisibility_time BIGINT DEFAULT 0,
-    created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME(6) DEFAULT CURRENT_TIMESTAMP(6),
     deleted_at DATETIME(6) DEFAULT NULL,
     PRIMARY KEY(id)
 );</code></pre>
@@ -136,5 +136,14 @@ DELIMITER ;
 Step 2 - certain processing system gets message from there.<br />
 Step 3 - with given details (id) from Step 2 message gets deleted by the processing system.</p>
 <h2 id="example">Example</h2>
+<h3 id="start-the-mysql-server">Start the mysql server</h3>
+<pre><code>docker run --rm \
+    --name main_schema_mysql \
+    -p 33061:3306 \
+    -e MYSQL_ALLOW_EMPTY_PASSWORD=&#39;yes&#39; \
+    -e MYSQL_ROOT_PASSWORD=&#39;&#39; \
+    -e MYSQL_DATABASE=&#39;main_schema&#39; \
+    -d mysql:8.0</code></pre>
+<h3 id="run-all-the-sql-scripts-from-above">run all the sql scripts from above</h3>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise we learned how to create stored procedures and got familiar with messaging queue systems.</p>
