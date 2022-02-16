@@ -230,7 +230,7 @@ CALL main_schema.get_message_from_queue('default');
 ```
 
 And finally delete the message (though it's not necessary in this scenario
-because message will not appear appear anymore because of counter over limit):
+because message will not appear anymore because of counter is over limit):
 ```
 CALL main_schema.delete_message_from_queue(1);
 ```
@@ -300,5 +300,5 @@ with messaging queue systems.
 When i was working on this tool - most difficult part was to make sure that
 Race Conditions condition does not happen when several tasks workers query the
 DB simultaneously. I was able to achieve that using transactions and proper
-rows locks with `SELECT ... FOR UPDATE` statement.
+rows locks with `SELECT ... FOR UPDATE` statement [some docs](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html).
 

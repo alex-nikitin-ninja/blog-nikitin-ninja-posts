@@ -160,7 +160,7 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
 CALL main_schema.get_message_from_queue(&#39;default&#39;);</code></pre>
 <p>In this call we ensure that there’s no messages to report:</p>
 <pre><code>CALL main_schema.get_message_from_queue(&#39;default&#39;);</code></pre>
-<p>And finally delete the message (though it’s not necessary in this scenario because message will not appear appear anymore because of counter over limit):</p>
+<p>And finally delete the message (though it’s not necessary in this scenario because message will not appear anymore because of counter is over limit):</p>
 <pre><code>CALL main_schema.delete_message_from_queue(1);</code></pre>
 <p>Then with direct table call we ensure that deleted_at column gets updated accordingly:</p>
 <pre><code>SELECT * FROM main_schema.main_queue;</code></pre>
@@ -214,4 +214,4 @@ mysql&gt; SELECT * FROM main_schema.main_queue;
 </code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise we learned how to create stored procedures and got familiar with messaging queue systems.</p>
-<p>When i was working on this tool - most difficult part was to make sure that Race Conditions condition does not happen when several tasks workers query the DB simultaneously. I was able to achieve that using transactions and proper rows locks with <code>SELECT ... FOR UPDATE</code> statement.</p>
+<p>When i was working on this tool - most difficult part was to make sure that Race Conditions condition does not happen when several tasks workers query the DB simultaneously. I was able to achieve that using transactions and proper rows locks with <code>SELECT ... FOR UPDATE</code> statement <a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html">some docs</a>.</p>
