@@ -237,11 +237,11 @@ mysql> USE main_schema;
 Database changed
 
 mysql> SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
-+----------------------------------------------+
-| put_message_in_queue ('default', '{}', 2, 0) |
-+----------------------------------------------+
-|                                            1 |
-+----------------------------------------------+
++-------------+
+| _message_id |
++-------------+
+|           1 |
++-------------+
 1 row in set (0.01 sec)
 
 mysql> CALL main_schema.get_message_from_queue('default');

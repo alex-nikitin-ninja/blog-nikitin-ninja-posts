@@ -178,11 +178,11 @@ SELECT * FROM main_schema.main_queue;</code></pre>
 Database changed
 
 mysql&gt; SELECT put_message_in_queue (&#39;default&#39;, &#39;{}&#39;, 2, 0) AS _message_id;
-+----------------------------------------------+
-| put_message_in_queue (&#39;default&#39;, &#39;{}&#39;, 2, 0) |
-+----------------------------------------------+
-|                                            1 |
-+----------------------------------------------+
++-------------+
+| _message_id |
++-------------+
+|           1 |
++-------------+
 1 row in set (0.01 sec)
 
 mysql&gt; CALL main_schema.get_message_from_queue(&#39;default&#39;);
