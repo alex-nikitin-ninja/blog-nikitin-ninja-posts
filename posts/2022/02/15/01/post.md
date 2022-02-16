@@ -78,7 +78,7 @@ deletion. `0` means visible immediately.
 to be the following columns `next_read`, `max_read_cnt`, `read_cnt`,
 `queue_name`.
 
-### Stored procedures - `put_message_in_queue`
+### Stored functions - `put_message_in_queue`
 ```
 USE main_schema;
 DROP FUNCTION put_message_in_queue;
@@ -102,7 +102,7 @@ BEGIN
     RETURN @LID;
 END //
 DELIMITER ;
--- SELECT put_message_in_queue ('default', '{}', 1, 0);
+-- SELECT put_message_in_queue ('default', '{}', 1, 0) AS _message_id;
 ```
 
 ### Stored procedures - `get_message_from_queue`
@@ -143,7 +143,7 @@ BEGIN
     COMMIT;
 END //
 DELIMITER ;
--- CALL main_schema.get_message_from_queue('default')
+-- CALL main_schema.get_message_from_queue('default');
 ```
 
 ### Stored procedures - `delete_message_from_queue`
@@ -167,7 +167,7 @@ BEGIN
     COMMIT;
 END //
 DELIMITER ;
--- CALL main_schema.delete_message_from_queue(1)
+-- CALL main_schema.delete_message_from_queue(1);
 ```
 
 ## Usage
@@ -209,23 +209,32 @@ I'm going to use the following pattern:
 ```
 -- switch the DB for current session
 USE main_schema;
+```
 
+```
 -- we put the message in queue, and receive message id for later use or any kind
 -- of logging:
 SELECT put_message_in_queue ('default', '{}', 2, 0) AS _message_id;
+```
 
+```
 -- in this call we output message and note that `read_cnt` counter increases its
 -- value:
 CALL main_schema.get_message_from_queue('default');
 CALL main_schema.get_message_from_queue('default');
 
+```
 -- in this call we ensure that there's no messages to report
 CALL main_schema.get_message_from_queue('default');
+```
 
+```
 -- and finally delete the message (though it's not necessary in this scenario
 -- because message will not appear appear anymore because of counter over limit):
 CALL main_schema.delete_message_from_queue(1);
+```
 
+```
 -- then with direct table call we ensure that deleted_at column gets updated
 -- accordingly:
 SELECT * FROM main_schema.main_queue;
