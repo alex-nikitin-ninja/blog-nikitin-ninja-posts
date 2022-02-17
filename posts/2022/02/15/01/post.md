@@ -204,7 +204,10 @@ Then run all the sql scripts from above.
 
 ### And let's try it out in action
 
-I'm going to use the following pattern:
+I'm going to use the following pattern - create message with 2 max read count,
+then retrieve the message two times and validate that it's not readable anymore,
+then soft delete the message and validate that necessary metadata value was
+updated in the table directly.
 
 Switch the DB for current session:
 ```

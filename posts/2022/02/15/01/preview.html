@@ -150,7 +150,7 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
 <pre><code>mysql --port 33061 -u root -h 127.0.0.1</code></pre>
 <p>Then run all the sql scripts from above.</p>
 <h3 id="and-lets-try-it-out-in-action">And let’s try it out in action</h3>
-<p>I’m going to use the following pattern:</p>
+<p>I’m going to use the following pattern - create message with 2 max read count, then retrieve the message two times and validate that it’s not readable anymore, then soft delete the message and validate that necessary metadata value was updated in the table directly.</p>
 <p>Switch the DB for current session:</p>
 <pre><code>USE main_schema;</code></pre>
 <p>We put the message in queue, and receive message id for later use or any kind of logging:</p>
