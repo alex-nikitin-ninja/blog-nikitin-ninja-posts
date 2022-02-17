@@ -201,8 +201,8 @@ client:
 $ mysql --port 33061 -u root -h 127.0.0.1
 ```
 
-Then run all the sql scripts from above - create table, stored function, and two
-stored procedures.
+Then run all the sql scripts from above - create the table, stored function, and
+two stored procedures.
 
 ### And let's try it in action
 
