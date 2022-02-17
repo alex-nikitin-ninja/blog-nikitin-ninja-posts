@@ -302,3 +302,4 @@ Race Conditions event does not happen when several tasks workers query the DB
 simultaneously. I was able to achieve that using transactions and proper rows
 locks with `SELECT ... FOR UPDATE` statement ([dev.mysql.com/.../innodb-locking-reads](https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html)).
 
+ #sqs #queue #service #research #mysql #howto #databases

@@ -1,5 +1,3 @@
-helper
-tips
-tar
-linux
-shortcuts
+databases
+mysql
+research
