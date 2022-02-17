@@ -181,7 +181,7 @@ processing system.
 
 ## Example
 
-Assuming we're familiar with docker
+Assuming we're familiar with docker.
 
 ### Start the MySQL server
 
@@ -195,12 +195,14 @@ $ docker run --rm \
     -d mysql:8.0
 ```
 
-Connect to the server with any appropriate way, for example using `mysql-cli` client:
+Connect to the server with any appropriate way, for example using `mysql-cli`
+client:
 ```
 $ mysql --port 33061 -u root -h 127.0.0.1
 ```
 
-Then run all the sql scripts from above.
+Then run all the sql scripts from above - create table, stored function, and two
+stored procedures.
 
 ### And let's try it in action
 
