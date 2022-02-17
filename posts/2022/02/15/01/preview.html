@@ -215,3 +215,4 @@ mysql&gt; SELECT * FROM main_schema.main_queue;
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise we learned how to create stored procedures and got familiar with messaging queue systems.</p>
 <p>When I was working on this tool - most difficult part was to make sure that Race Conditions event does not happen when several tasks workers query the DB simultaneously. I was able to achieve that using transactions and proper rows locks with <code>SELECT ... FOR UPDATE</code> statement (<a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html">dev.mysql.com/…/innodb-locking-reads</a>).</p>
+<p>#sqs #queue #service #research #mysql #howto #databases</p>
