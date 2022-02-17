@@ -146,10 +146,10 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
     -e MYSQL_ROOT_PASSWORD=&#39;&#39; \
     -e MYSQL_DATABASE=&#39;main_schema&#39; \
     -d mysql:8.0</code></pre>
-<p>Connect to the server any appropriate way, for example <code>mysql-cli</code>:</p>
+<p>Connect to the server any appropriate way, for example using <code>mysql-cli</code> tool:</p>
 <pre><code>mysql --port 33061 -u root -h 127.0.0.1</code></pre>
 <p>Then run all the sql scripts from above.</p>
-<h3 id="and-lets-try-it-out-in-action">And let’s try it out in action</h3>
+<h3 id="and-lets-try-it-in-action">And let’s try it in action</h3>
 <p>I’m going to use the following pattern - create a simple message with 2 max read count, then retrieve the message two times and validate that it’s not readable anymore, then soft delete the message and validate that necessary metadata value was updated in the table directly.</p>
 <p>Switch the DB for current session:</p>
 <pre><code>USE main_schema;</code></pre>

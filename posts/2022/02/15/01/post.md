@@ -195,14 +195,14 @@ docker run --rm \
     -d mysql:8.0
 ```
 
-Connect to the server any appropriate way, for example `mysql-cli`:
+Connect to the server any appropriate way, for example using `mysql-cli` tool:
 ```
 mysql --port 33061 -u root -h 127.0.0.1
 ```
 
 Then run all the sql scripts from above.
 
-### And let's try it out in action
+### And let's try it in action
 
 I'm going to use the following pattern - create a simple message with 2 max read
 count, then retrieve the message two times and validate that it's not readable
