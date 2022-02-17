@@ -71,6 +71,8 @@ no limit on how many times it can be read.
 retrieval (helpful if our task needs time to process the message before actual
 deletion. `0` means visible immediately.
 - `created_at` - timestamp when message was created.
+- `deleted_at` - timestamp when message was deleted, set to `NULL` if not
+deleted - soft delete option.
 
 **Note:** number in `DATETIME(6)` means fraction part of seconds to store.
 

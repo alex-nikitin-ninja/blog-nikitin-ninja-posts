@@ -45,6 +45,7 @@ CREATE TABLE main_schema.main_queue (
 <li><code>next_read</code> - timestamp when message is visible for reading.</li>
 <li><code>invisibility_time</code> - number in seconds how long message is not available for retrieval (helpful if our task needs time to process the message before actual deletion. <code>0</code> means visible immediately.</li>
 <li><code>created_at</code> - timestamp when message was created.</li>
+<li><code>deleted_at</code> - timestamp when message was deleted, set to <code>NULL</code> if not deleted - soft delete option.</li>
 </ul>
 <p><strong>Note:</strong> number in <code>DATETIME(6)</code> means fraction part of seconds to store.</p>
 <p><strong>Indexes</strong> - TBD, but according to the code in the stored procedures, that need to be the following columns <code>next_read</code>, <code>max_read_cnt</code>, <code>read_cnt</code>, <code>queue_name</code>.</p>
