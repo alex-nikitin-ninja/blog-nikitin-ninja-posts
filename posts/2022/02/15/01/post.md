@@ -195,7 +195,7 @@ docker run --rm \
     -d mysql:8.0
 ```
 
-Connect to the server any appropriate way, for example using `mysql-cli` client:
+Connect to the server with any appropriate way, for example using `mysql-cli` client:
 ```
 mysql --port 33061 -u root -h 127.0.0.1
 ```
