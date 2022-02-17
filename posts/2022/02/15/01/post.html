@@ -139,7 +139,7 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
 <h2 id="example">Example</h2>
 <p>Assuming we’re familiar with docker</p>
 <h3 id="start-the-mysql-server">Start the MySQL server</h3>
-<pre><code>docker run --rm \
+<pre><code>$ docker run --rm \
     --name main_schema_mysql \
     -p 33061:3306 \
     -e MYSQL_ALLOW_EMPTY_PASSWORD=&#39;yes&#39; \
@@ -147,7 +147,7 @@ Step 3 - with given details (id) from Step 2 message gets deleted by the process
     -e MYSQL_DATABASE=&#39;main_schema&#39; \
     -d mysql:8.0</code></pre>
 <p>Connect to the server with any appropriate way, for example using <code>mysql-cli</code> client:</p>
-<pre><code>mysql --port 33061 -u root -h 127.0.0.1</code></pre>
+<pre><code>$ mysql --port 33061 -u root -h 127.0.0.1</code></pre>
 <p>Then run all the sql scripts from above.</p>
 <h3 id="and-lets-try-it-in-action">And let’s try it in action</h3>
 <p>I’m going to use the following pattern - create a simple message with 2 max read count, then retrieve the message two times and validate that it’s not readable anymore, then soft delete the message and validate that necessary metadata value was updated in the table directly.</p>

@@ -186,7 +186,7 @@ Assuming we're familiar with docker
 ### Start the MySQL server
 
 ```
-docker run --rm \
+$ docker run --rm \
     --name main_schema_mysql \
     -p 33061:3306 \
     -e MYSQL_ALLOW_EMPTY_PASSWORD='yes' \
@@ -197,7 +197,7 @@ docker run --rm \
 
 Connect to the server with any appropriate way, for example using `mysql-cli` client:
 ```
-mysql --port 33061 -u root -h 127.0.0.1
+$ mysql --port 33061 -u root -h 127.0.0.1
 ```
 
 Then run all the sql scripts from above.
