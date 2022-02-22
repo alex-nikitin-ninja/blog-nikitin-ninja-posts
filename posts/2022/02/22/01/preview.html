@@ -24,4 +24,11 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <pre><code>docker images -a</code></pre>
 <h2 id="list-containers-and-its-statuses">List <em>containers</em> and its statuses</h2>
 <pre><code>docker ps -a</code></pre>
+<h2 id="simple-networking">Simple networking</h2>
+<p>Create network which works as a bridge to existing physical network (with the following, usually sent by DHCP, parameters: subnet: 192.168.0.0/24 gateway:192.168.0.1):</p>
+<pre><code>docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
+<p>Then run a container with that interface attached:</p>
+<pre><code>docker run --net=pub_net -it --rm ubuntu bash</code></pre>
+<p>https://habrahabr.ru/post/310460/</p>
+<p>docker run -v /home/ubuntu/repos/private/tmp:/var/www/html/tmp -e SITE_URL=‘https://google.com’ -d sites-scraping-task</p>
 <p>#hashtag1 #hashtag2</p>

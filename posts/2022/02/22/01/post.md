@@ -70,5 +70,26 @@ docker images -a
 docker ps -a
 ```
 
+## Simple networking
+
+Create network which works as a bridge to existing physical network (with
+the following, usually sent by DHCP, parameters: subnet: 192.168.0.0/24
+gateway:192.168.0.1):
+```
+docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net
+```
+
+Then run a container with that interface attached:
+```
+docker run --net=pub_net -it --rm ubuntu bash
+```
+
+
+https://habrahabr.ru/post/310460/
+
+
+docker run -v /home/ubuntu/repos/private/tmp:/var/www/html/tmp -e SITE_URL='https://google.com' -d sites-scraping-task
+
+
 
  #hashtag1 #hashtag2
