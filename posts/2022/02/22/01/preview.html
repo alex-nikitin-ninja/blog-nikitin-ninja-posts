@@ -20,11 +20,12 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <h2 id="remove-all-unused-images">Remove all unused <em>images</em></h2>
 <p>Handy if you had a build which failed or made another image revision and older containers are no longer in use.</p>
 <pre><code>docker rmi -f $(docker images | grep &quot;&lt;none&gt;&quot; | awk &quot;{print \$3}&quot;)</code></pre>
-<h2 id="list-images">List <em>images</em></h2>
-<pre><code>docker images -a</code></pre>
-<h2 id="list-containers-and-its-statuses">List <em>containers</em> and its statuses</h2>
-<pre><code>docker ps -a</code></pre>
-<h2 id="simple-networking">Simple networking</h2>
+<h2 id="list-containers-and-images">List <em>containers</em> and <em>images</em></h2>
+<pre><code># Images: 
+docker images -a</code></pre>
+<pre><code># Containers:
+docker ps -a</code></pre>
+<h2 id="connect-to-existing-physical-network">Connect to existing physical network</h2>
 <p>Create network which works as a bridge to existing physical network (with the following, usually sent by DHCP, parameters: subnet: 192.168.0.0/24 gateway:192.168.0.1):</p>
 <pre><code>docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
 <p>Then run a container with that interface attached:</p>

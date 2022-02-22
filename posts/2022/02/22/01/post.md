@@ -60,17 +60,17 @@ containers are no longer in use.
 docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 ```
 
-## List _images_
+## List _containers_ and _images_
 ```
+# Images: 
 docker images -a
 ```
-
-## List _containers_ and its statuses
 ```
+# Containers:
 docker ps -a
 ```
 
-## Simple networking
+## Connect to existing physical network
 
 Create network which works as a bridge to existing physical network (with
 the following, usually sent by DHCP, parameters: subnet: 192.168.0.0/24
