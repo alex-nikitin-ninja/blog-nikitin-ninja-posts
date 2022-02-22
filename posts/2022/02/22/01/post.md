@@ -39,4 +39,16 @@ docker build -t <image-name>:latest -f dockerfiles/api/Dockerfile .
 docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 ```
 
+
+## Remove all exited _containers_
+
+Handy if you run plenty of containers without `--rm` (`docker run --rm ...`)
+option or if you had a failed build.
+
+```
+docker rm $(docker ps -a -q -f status=exited)
+```
+
+
+
  #hashtag1 #hashtag2

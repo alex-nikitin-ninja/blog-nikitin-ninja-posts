@@ -13,4 +13,7 @@
 <p>–or– if you have multiple Dockerfiles within the single code repo (monorepository?) - let’s say all Dockerfile’s are in separate folders (<code>api</code> or <code>spa</code> in this example):</p>
 <pre><code>docker build -t &lt;image-name&gt;:latest -f dockerfiles/api/Dockerfile .
 docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code></pre>
+<h2 id="remove-all-exited-containers">Remove all exited <em>containers</em></h2>
+<p>Handy if you run plenty of containers without <code>--rm</code> (<code>docker run --rm ...</code>) option or if you had a failed build.</p>
+<pre><code>docker rm $(docker ps -a -q -f status=exited)</code></pre>
 <p>#hashtag1 #hashtag2</p>
