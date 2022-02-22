@@ -16,7 +16,7 @@ a look and consider.
 
 -more-
 
-# Build **image**
+## Build image
 
 Build an _image_ from Dockerfile
 ```
