@@ -74,9 +74,13 @@ docker ps -a
 
 ## Connect to existing physical network
 
-Create network which works as a bridge to existing physical network (with
-the following, usually sent by DHCP, parameters: subnet: 192.168.0.0/24
-gateway:192.168.0.1):
+Create network which works as a bridge to existing physical network
+
+Assuming network details are (usually sent by DHCP):
+
+**Subnet:** 192.168.0.0/24
+**Gateway:** 192.168.0.1
+
 ```
 docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net
 ```
