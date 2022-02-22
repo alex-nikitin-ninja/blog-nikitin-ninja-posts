@@ -20,7 +20,7 @@ a look and consider.
 
 Build an _image_ from Dockerfile:
 
-_(with --no-cache option)_
+_(with `--no-cache` option)_
 ```
 docker build --no-cache=true -t <image-name>:latest .
 ```
