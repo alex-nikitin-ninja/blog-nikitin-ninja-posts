@@ -99,8 +99,8 @@ $ docker run --net=pub_net -it --rm ubuntu bash
 ```
 
 ## Volumes mapping
-Bypass folders from host instance into container instance. Docker does not like
-relative paths, so need to specify the **full** path.
+Mount (or map) folders from host instance into container instance. Docker does
+not like relative paths, so need to specify the **full** path.
 
 ```
 $ docker run -v /path/to/host/folder:/path/to/container/folder -d <image name>
