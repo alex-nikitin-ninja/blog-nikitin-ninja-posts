@@ -25,7 +25,7 @@ $ docker build --no-cache=true -t <image-name>:latest .
 ```
 
 --or-- with passed build variable `staging` (use `--build-arg` use with `ARG
-working_branch="<default value>"` in `Dockerfile`):
+working_branch="<default value>"` in Dockerfile):
 
 -more-
 
