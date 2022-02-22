@@ -14,7 +14,6 @@ Kaniko.
 The first 3 sounded familiar to me, though the last 4 is something to take
 a look and consider.
 
--more-
 
 ## Build image
 
@@ -26,6 +25,8 @@ $ docker build --no-cache=true -t <image-name>:latest .
 ```
 
 --or-- with passed build variable `staging` (use `--build-arg`)
+
+-more-
 
 ```
 $ docker build --build-arg working_branch=staging --no-cache=true -t <image-name>:latest .

@@ -4,12 +4,12 @@
 <p>In this short post i’m trying to put handy cli shortcuts which i use. Some of them almost every day.</p>
 <p>Alternatives to docker are: Podman, LXD, Containerd, RunC, Buildah, BuildKit, Kaniko.</p>
 <p>The first 3 sounded familiar to me, though the last 4 is something to take a look and consider.</p>
-<p>-more-</p>
 <h2 id="build-image">Build image</h2>
 <p>Build an <em>image</em> from Dockerfile:</p>
 <p><em>(with <code>--no-cache</code> option)</em></p>
 <pre><code>$ docker build --no-cache=true -t &lt;image-name&gt;:latest .</code></pre>
 <p>–or– with passed build variable <code>staging</code> (use <code>--build-arg</code>)</p>
+<p>-more-</p>
 <pre><code>$ docker build --build-arg working_branch=staging --no-cache=true -t &lt;image-name&gt;:latest .</code></pre>
 <p>–or– if you have multiple Dockerfiles within the single code repo (monorepository?) - let’s say all Dockerfile’s are in separate folders (<code>api</code> or <code>spa</code> in this example):</p>
 <pre><code>$ docker build -t &lt;image-name&gt;:latest -f dockerfiles/api/Dockerfile .
