@@ -60,6 +60,6 @@ $ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</cod
 <p>Then run a container with that interface attached:</p>
 <pre><code>$ docker run --net=pub_net -it --rm ubuntu bash</code></pre>
 <h2 id="volumes-mapping">Volumes mapping</h2>
-<p>Mount (or map) folders from host instance into container instance. Docker does not like relative paths, so need to specify the <strong>full</strong> path.</p>
+<p>Mount (or map) folders from host instance into container instance. Docker does not like relative paths, so need to specify the <strong>full</strong> path (may use <code>pwd</code> appropriately).</p>
 <pre><code>$ docker run -v /path/to/host/folder:/path/to/container/folder -d &lt;image name&gt;</code></pre>
 <p>#hashtag1 #hashtag2</p>
