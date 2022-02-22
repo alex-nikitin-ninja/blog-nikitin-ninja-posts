@@ -21,19 +21,22 @@ a look and consider.
 Build an _image_ from Dockerfile:
 
 ```
-docker build --no-cache=true -t ubuntu/added_php:latest .
+docker build --no-cache=true -t <image-name>:latest .
 ```
 
---or-- with passed build variable `staging`
+--or-- with passed build variable `staging` (use `--build-arg`)
 
 ```
-docker build --build-arg working_branch=staging --no-cache=true -t ubuntu/added_php:latest .
+docker build --build-arg working_branch=staging --no-cache=true -t <image-name>:latest .
 ```
 
---or-- multiple Dockerfiles within the single code repo - all Dockerfile's are in separate folders:
+--or-- if you have multiple Dockerfiles within the single code repo
+(monorepository?) - let's say all Dockerfile's are in separate folders (`api` or
+`spa` in this example):
 
 ```
-docker build -t ubuntu/added_php:latest -f dockerfiles/destini-api/Dockerfile .
+docker build -t <image-name>:latest -f dockerfiles/api/Dockerfile .
+docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 ```
 
  #hashtag1 #hashtag2
