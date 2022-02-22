@@ -85,8 +85,6 @@ Assuming network details are (usually sent by DHCP, but can be set manually):
 |**Physical interface name**| wlo1|
 
 
-|Syntax   |Description|
-|-|-|
 |Header   |Title|
 |Paragraph|Text| 
 

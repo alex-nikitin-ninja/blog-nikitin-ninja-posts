@@ -29,24 +29,7 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <p>Create network which works as a bridge to existing physical network. New network name in this example will be <code>pub_net</code></p>
 <p>Assuming network details are (usually sent by DHCP, but can be set manually):</p>
 <p>|<strong>Subnet</strong> | 192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)| |<strong>Gateway</strong> | 192.168.0.1| |<strong>Physical interface name</strong>| wlo1|</p>
-<table>
-<thead>
-<tr class="header">
-<th>Syntax</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Header</td>
-<td>Title</td>
-</tr>
-<tr class="even">
-<td>Paragraph</td>
-<td>Text</td>
-</tr>
-</tbody>
-</table>
+<p>|Header |Title| |Paragraph|Text|</p>
 <pre><code>docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
 <p>Then run a container with that interface attached:</p>
 <pre><code>docker run --net=pub_net -it --rm ubuntu bash</code></pre>
