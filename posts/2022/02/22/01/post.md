@@ -61,12 +61,13 @@ docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 ```
 
 ## List _containers_ and _images_
-# Images: 
+
+**Images:**
 ```
 docker images -a
 ```
 
-# Containers:
+**Containers:**
 ```
 docker ps -a
 ```
