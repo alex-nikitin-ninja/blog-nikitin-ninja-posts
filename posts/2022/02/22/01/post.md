@@ -43,7 +43,7 @@ docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 
 ## Remove _containers_ or _images_
 
-**Remove exited _containers_.**
+**Remove exited _containers_**
 
 Handy if you run plenty of containers without `--rm` (`docker run --rm ...`)
 option or if you had a failed build.

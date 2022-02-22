@@ -15,7 +15,7 @@
 <pre><code>docker build -t &lt;image-name&gt;:latest -f dockerfiles/api/Dockerfile .
 docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code></pre>
 <h2 id="remove-containers-or-images">Remove <em>containers</em> or <em>images</em></h2>
-<p><strong>Remove exited <em>containers</em>.</strong></p>
+<p><strong>Remove exited <em>containers</em></strong></p>
 <p>Handy if you run plenty of containers without <code>--rm</code> (<code>docker run --rm ...</code>) option or if you had a failed build.</p>
 <pre><code>docker rm $(docker ps -a -q -f status=exited)</code></pre>
 <p><strong>Remove unused <em>images</em></strong></p>
