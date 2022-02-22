@@ -6,6 +6,7 @@ Containerization is an excellent way of applications isolation and Docker is one
 the most popular tools which allow us to do that.
 
 Alternatives to docker are:
+
 - Podman
 - LXD
 - Containerd.
