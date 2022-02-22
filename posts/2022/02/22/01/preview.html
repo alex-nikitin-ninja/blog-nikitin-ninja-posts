@@ -28,7 +28,32 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <h2 id="connect-to-existing-physical-network">Connect to existing physical network</h2>
 <p>Create network which works as a bridge to existing physical network. New network name in this example will be <code>pub_net</code></p>
 <p>Assuming network details are (usually sent by DHCP, but can be set manually):</p>
-<p>|Syntax |Description| |<strong>Subnet</strong> | 192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)| |<strong>Gateway</strong> | 192.168.0.1| |<strong>Physical interface name</strong>| wlo1|</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Subnet</strong></td>
+<td>192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)</td>
+</tr>
+<tr class="even">
+<td><strong>Gateway</strong></td>
+<td>192.168.0.1</td>
+</tr>
+<tr class="odd">
+<td><strong>Physical interface name</strong></td>
+<td>wlo1</td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr class="header">
