@@ -6,10 +6,10 @@
 <p>The first 3 sounded familiar to me, though the last 4 is something to take a look and consider.</p>
 <p>-more-</p>
 <h2 id="build-image">Build image</h2>
-<p>Build an <em>image</em> from Dockerfile</p>
-<pre><code>docker build --no-cache=true -t ubuntu/added_php:latest .
---or-- with passed branch variable staging
-docker build --build-arg working_branch=staging --no-cache=true -t ubuntu/added_php:latest .
---or-- multiple Dockerfiles within the single code repo - all Dockerfile&#39;s are in separate folders:
-docker build -t ubuntu/added_php:latest -f dockerfiles/destini-api/Dockerfile .</code></pre>
+<p>Build an <em>image</em> from Dockerfile:</p>
+<pre><code>docker build --no-cache=true -t ubuntu/added_php:latest .</code></pre>
+<p>–or– with passed build variable <code>staging</code></p>
+<pre><code>docker build --build-arg working_branch=staging --no-cache=true -t ubuntu/added_php:latest .</code></pre>
+<p>–or– multiple Dockerfiles within the single code repo - all Dockerfile’s are in separate folders:</p>
+<pre><code>docker build -t ubuntu/added_php:latest -f dockerfiles/destini-api/Dockerfile .</code></pre>
 <p>#hashtag1 #hashtag2</p>
