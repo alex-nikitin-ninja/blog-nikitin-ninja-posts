@@ -80,11 +80,14 @@ name in this example will be `pub_net`
 Assuming network details are (usually sent by DHCP, but can be set manually):
 
 
+|Syntax   |Description|
 |**Subnet** | 192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)|
 |**Gateway** | 192.168.0.1|
 |**Physical interface name**| wlo1|
 
 
+|Syntax   |Description|
+|-|-|
 |Header   |Title|
 |Paragraph|Text| 
 
