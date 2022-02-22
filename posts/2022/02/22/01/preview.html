@@ -5,5 +5,11 @@
 <p>Alternatives to docker are: Podman, LXD, Containerd, RunC, Buildah, BuildKit, Kaniko.</p>
 <p>The first 3 sounded familiar to me, though the last 4 is something to take a look and consider.</p>
 <p>-more-</p>
-<p>asdfasdf</p>
+<h1 id="build-image">Build <strong>image</strong></h1>
+<p>Build an <em>image</em> from Dockerfile</p>
+<pre><code>docker build --no-cache=true -t ubuntu/added_php:latest .
+--or-- with passed branch variable staging
+docker build --build-arg working_branch=staging --no-cache=true -t ubuntu/added_php:latest .
+--or-- multiple Dockerfiles within the single code repo - all Dockerfile&#39;s are in separate folders:
+docker build -t ubuntu/added_php:latest -f dockerfiles/destini-api/Dockerfile .</code></pre>
 <p>#hashtag1 #hashtag2</p>

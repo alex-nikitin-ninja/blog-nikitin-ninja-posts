@@ -16,6 +16,15 @@ a look and consider.
 
 -more-
 
-asdfasdf
+# Build **image**
+
+Build an _image_ from Dockerfile
+```
+docker build --no-cache=true -t ubuntu/added_php:latest .
+--or-- with passed branch variable staging
+docker build --build-arg working_branch=staging --no-cache=true -t ubuntu/added_php:latest .
+--or-- multiple Dockerfiles within the single code repo - all Dockerfile's are in separate folders:
+docker build -t ubuntu/added_php:latest -f dockerfiles/destini-api/Dockerfile .
+```
 
  #hashtag1 #hashtag2
