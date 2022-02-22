@@ -1,4 +1,4 @@
-# Quick top 5 `docker` shortcuts
+# Quick top 5 `docker` cli shortcuts
 
 Difficulty level: **low**
 
@@ -13,8 +13,6 @@ Kaniko.
 
 The first 3 sounded familiar to me, though the last 4 is something to take
 consider.
-
-
 
 -more-
 
