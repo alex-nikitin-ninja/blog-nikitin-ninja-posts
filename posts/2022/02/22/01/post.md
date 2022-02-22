@@ -20,6 +20,7 @@ a look and consider.
 
 Build an _image_ from Dockerfile:
 
+_(with --no-cache option)_
 ```
 docker build --no-cache=true -t <image-name>:latest .
 ```
@@ -49,6 +50,15 @@ option or if you had a failed build.
 docker rm $(docker ps -a -q -f status=exited)
 ```
 
+
+## Remove all unused _images_
+
+Handy if you had  a build which failed or made another image revision and older
+containers are no longer in use.
+
+```
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+```
 
 
  #hashtag1 #hashtag2

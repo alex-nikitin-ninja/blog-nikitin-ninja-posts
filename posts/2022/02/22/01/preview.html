@@ -7,6 +7,7 @@
 <p>-more-</p>
 <h2 id="build-image">Build image</h2>
 <p>Build an <em>image</em> from Dockerfile:</p>
+<p><em>(with –no-cache option)</em></p>
 <pre><code>docker build --no-cache=true -t &lt;image-name&gt;:latest .</code></pre>
 <p>–or– with passed build variable <code>staging</code> (use <code>--build-arg</code>)</p>
 <pre><code>docker build --build-arg working_branch=staging --no-cache=true -t &lt;image-name&gt;:latest .</code></pre>
@@ -16,4 +17,7 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <h2 id="remove-all-exited-containers">Remove all exited <em>containers</em></h2>
 <p>Handy if you run plenty of containers without <code>--rm</code> (<code>docker run --rm ...</code>) option or if you had a failed build.</p>
 <pre><code>docker rm $(docker ps -a -q -f status=exited)</code></pre>
+<h2 id="remove-all-unused-images">Remove all unused <em>images</em></h2>
+<p>Handy if you had a build which failed or made another image revision and older containers are no longer in use.</p>
+<pre><code>docker rmi -f $(docker images | grep &quot;&lt;none&gt;&quot; | awk &quot;{print \$3}&quot;)</code></pre>
 <p>#hashtag1 #hashtag2</p>
