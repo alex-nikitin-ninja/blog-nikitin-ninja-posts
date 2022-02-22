@@ -60,5 +60,15 @@ containers are no longer in use.
 docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 ```
 
+## List _images_
+```
+docker images -a
+```
+
+## List _containers_ and its statuses
+```
+docker ps -a
+```
+
 
  #hashtag1 #hashtag2

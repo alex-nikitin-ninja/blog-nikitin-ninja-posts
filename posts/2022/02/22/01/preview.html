@@ -20,4 +20,8 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <h2 id="remove-all-unused-images">Remove all unused <em>images</em></h2>
 <p>Handy if you had a build which failed or made another image revision and older containers are no longer in use.</p>
 <pre><code>docker rmi -f $(docker images | grep &quot;&lt;none&gt;&quot; | awk &quot;{print \$3}&quot;)</code></pre>
+<h2 id="list-images">List <em>images</em></h2>
+<pre><code>docker images -a</code></pre>
+<h2 id="list-containers-and-its-statuses">List <em>containers</em> and its statuses</h2>
+<pre><code>docker ps -a</code></pre>
 <p>#hashtag1 #hashtag2</p>
