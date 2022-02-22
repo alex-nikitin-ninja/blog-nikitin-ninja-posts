@@ -26,6 +26,9 @@ $ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</cod
 <pre><code>$ docker images -a</code></pre>
 <p><strong>Containers:</strong></p>
 <pre><code>$ docker ps -a</code></pre>
+<h2 id="volumes-mapping">Volumes mapping</h2>
+<p>Mount (or map) folders from host instance into container instance. Docker does not like relative paths, so need to specify the <strong>full</strong> path (may use <code>pwd</code> appropriately):</p>
+<pre><code>$ docker run -v /path/to/host/folder:/path/to/container/folder -d &lt;image name&gt;</code></pre>
 <h2 id="connect-to-existing-physical-network">Connect to existing physical network</h2>
 <p>Create network which works as a bridge to existing physical network. New network name in this example will be <code>pub_net</code></p>
 <p>Assuming network details are (usually sent by DHCP server, but can be set manually):</p>
@@ -59,7 +62,4 @@ $ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</cod
 <pre><code>$ docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
 <p>Then run a container with that interface attached:</p>
 <pre><code>$ docker run --net=pub_net -it --rm ubuntu bash</code></pre>
-<h2 id="volumes-mapping">Volumes mapping</h2>
-<p>Mount (or map) folders from host instance into container instance. Docker does not like relative paths, so need to specify the <strong>full</strong> path (may use <code>pwd</code> appropriately):</p>
-<pre><code>$ docker run -v /path/to/host/folder:/path/to/container/folder -d &lt;image name&gt;</code></pre>
 <p>#docker #network #tips #helper #howto</p>

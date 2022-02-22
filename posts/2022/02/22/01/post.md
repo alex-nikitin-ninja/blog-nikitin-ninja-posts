@@ -75,6 +75,15 @@ $ docker images -a
 $ docker ps -a
 ```
 
+## Volumes mapping
+Mount (or map) folders from host instance into container instance. Docker does
+not like relative paths, so need to specify the **full** path (may use `pwd`
+appropriately):
+
+```
+$ docker run -v /path/to/host/folder:/path/to/container/folder -d <image name>
+```
+
 ## Connect to existing physical network
 
 Create network which works as a bridge to existing physical network. New network
@@ -98,15 +107,6 @@ $ docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 
 Then run a container with that interface attached:
 ```
 $ docker run --net=pub_net -it --rm ubuntu bash
-```
-
-## Volumes mapping
-Mount (or map) folders from host instance into container instance. Docker does
-not like relative paths, so need to specify the **full** path (may use `pwd`
-appropriately):
-
-```
-$ docker run -v /path/to/host/folder:/path/to/container/folder -d <image name>
 ```
 
 
