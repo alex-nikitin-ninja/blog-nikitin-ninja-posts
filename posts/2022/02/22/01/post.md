@@ -79,7 +79,8 @@ Create network which works as a bridge to existing physical network
 Assuming network details are (usually sent by DHCP):
 
 **Subnet:** 192.168.0.0/24  
-**Gateway:** 192.168.0.1
+**Gateway:** 192.168.0.1  
+**Interface name**: wlo1
 
 ```
 docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net
@@ -90,12 +91,13 @@ Then run a container with that interface attached:
 docker run --net=pub_net -it --rm ubuntu bash
 ```
 
+## Volumes mapping
+Bypass folders from host instance into container instance. Docker does not like
+relative paths, so need to specify the **full** path.
 
-https://habrahabr.ru/post/310460/
-
-
-docker run -v /home/ubuntu/repos/private/tmp:/var/www/html/tmp -e SITE_URL='https://google.com' -d sites-scraping-task
-
+```
+docker run -v /path/to/host/folder:/path/to/container/folder -d <image name>
+```
 
 
  #hashtag1 #hashtag2

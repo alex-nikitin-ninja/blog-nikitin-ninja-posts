@@ -29,10 +29,12 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 <p>Create network which works as a bridge to existing physical network</p>
 <p>Assuming network details are (usually sent by DHCP):</p>
 <p><strong>Subnet:</strong> 192.168.0.0/24<br />
-<strong>Gateway:</strong> 192.168.0.1</p>
+<strong>Gateway:</strong> 192.168.0.1<br />
+<strong>Interface name</strong>: wlo1</p>
 <pre><code>docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
 <p>Then run a container with that interface attached:</p>
 <pre><code>docker run --net=pub_net -it --rm ubuntu bash</code></pre>
-<p>https://habrahabr.ru/post/310460/</p>
-<p>docker run -v /home/ubuntu/repos/private/tmp:/var/www/html/tmp -e SITE_URL=‘https://google.com’ -d sites-scraping-task</p>
+<h2 id="volumes-mapping">Volumes mapping</h2>
+<p>Bypass folders from host instance into container instance. Docker does not like relative paths, so need to specify the <strong>full</strong> path.</p>
+<pre><code>docker run -v /path/to/host/folder:/path/to/container/folder -d &lt;image name&gt;</code></pre>
 <p>#hashtag1 #hashtag2</p>
