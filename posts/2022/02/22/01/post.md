@@ -37,7 +37,7 @@ $ docker build --build-arg working_branch=staging --no-cache=true -t <image-name
 
 ```
 $ docker build -t <image-name>:latest -f dockerfiles/api/Dockerfile .
-docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
+$ docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 ```
 
 
