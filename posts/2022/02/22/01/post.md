@@ -24,7 +24,8 @@ _(with `--no-cache` option):_
 $ docker build --no-cache=true -t <image-name>:latest .
 ```
 
---or-- with passed build variable `staging` (use `--build-arg`):
+--or-- with passed build variable `staging` (use `--build-arg` use with `ARG
+working_branch="master"` in Dockerfile):
 
 -more-
 
