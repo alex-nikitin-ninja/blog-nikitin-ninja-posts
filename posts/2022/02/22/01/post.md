@@ -41,7 +41,7 @@ docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 ```
 
 
-## Remove all exited _containers_ or unused _images_
+## Remove _containers_ or _images_
 
 **Remove exited containers.**
 
