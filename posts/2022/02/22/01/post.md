@@ -74,9 +74,10 @@ docker ps -a
 
 ## Connect to existing physical network
 
-Create network which works as a bridge to existing physical network
+Create network which works as a bridge to existing physical network. New network
+name in this example will be `pub_net`
 
-Assuming network details are (usually sent by DHCP):
+Assuming network details are (usually sent by DHCP, but can be set manually):
 
 **Subnet:** 192.168.0.0/24  
 **Gateway:** 192.168.0.1  
