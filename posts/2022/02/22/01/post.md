@@ -1,4 +1,4 @@
-# Docker shortcuts
+# `docker` shortcuts
 
 Difficulty level: **low**
 
