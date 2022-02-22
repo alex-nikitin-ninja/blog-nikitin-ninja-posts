@@ -41,7 +41,7 @@ $ docker build -t <image-name>:latest -f dockerfiles/spa/Dockerfile .
 ```
 
 
-## Remove _containers_ or _images_
+## Remove containers or images
 
 **Remove exited _containers_**
 
@@ -61,7 +61,7 @@ containers are no longer in use.
 $ docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 ```
 
-## List _containers_ and _images_
+## List containers and images
 
 **Images:**
 ```
