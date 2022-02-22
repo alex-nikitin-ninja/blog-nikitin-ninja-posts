@@ -79,9 +79,11 @@ name in this example will be `pub_net`
 
 Assuming network details are (usually sent by DHCP, but can be set manually):
 
-**Subnet:** 192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)  
-**Gateway:** 192.168.0.1  
-**Physical interface name**: wlo1
+---
+|**Subnet** | 192.168.0.0/24 (or 192.168.0.1 - 192.168.0.255, or 192.168.0.1-255)|
+|**Gateway** | 192.168.0.1|
+|**Physical interface name**| wlo1|
+---
 
 ```
 docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net
