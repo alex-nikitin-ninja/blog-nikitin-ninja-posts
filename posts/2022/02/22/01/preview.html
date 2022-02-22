@@ -54,6 +54,7 @@ docker build -t &lt;image-name&gt;:latest -f dockerfiles/spa/Dockerfile .</code>
 </tr>
 </tbody>
 </table>
+<p>Command to create a docker network interface:</p>
 <pre><code>docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net</code></pre>
 <p>Then run a container with that interface attached:</p>
 <pre><code>docker run --net=pub_net -it --rm ubuntu bash</code></pre>

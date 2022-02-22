@@ -86,6 +86,8 @@ manually):
 |**Gateway** | 192.168.0.1|
 |**Physical interface name**| wlo1|
 
+Command to create a docker network interface:
+
 ```
 docker network create -d ipvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=wlo1 pub_net
 ```
