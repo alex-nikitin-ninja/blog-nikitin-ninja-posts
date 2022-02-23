@@ -1,6 +1,6 @@
 # Quick top 5 `docker` cli shortcuts
 
-Difficulty level: **low**
+**Difficulty level**: low
 
 Containerization is an excellent way for applications isolation and Docker is
 one the most popular tools which allow us to do that.
