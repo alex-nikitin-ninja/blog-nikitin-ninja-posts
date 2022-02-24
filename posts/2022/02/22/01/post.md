@@ -24,7 +24,7 @@ _(with `--no-cache` option):_
 $ docker build --no-cache=true -t <image-name>:latest .
 ```
 
---or-- with passed build variable `staging` (use `--build-arg` with `ARG
+or: with passed build variable `staging` (use `--build-arg` with `ARG
 working_branch="<default value>"` in Dockerfile):
 
 -more-
@@ -33,7 +33,7 @@ working_branch="<default value>"` in Dockerfile):
 $ docker build --build-arg working_branch=staging --no-cache=true -t <image-name>:latest .
 ```
 
---or-- if you have multiple Dockerfiles within the single code repo
+or: if you have multiple Dockerfiles within the single code repo
 (monorepository?) - let's say all Dockerfile's are in separate folders (`api` or
 `spa` in this example):
 
